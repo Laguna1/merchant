@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>FoodWorks - Products: <%= controller.action_name %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+<div class="wrapper">
+    <div class="header">
+      <h1>FoodWorks</h1>
+      <p>Your Online Grocery</p>
+    </div>
+
+    <p style="color: green"><%= flash[:notice] %></p>
+
+    <div class="sidebar">
+      (sidebar)
+    </div>
+
+    <div class="main">
+      <%= yield %>
+    </div>
+
+    <div class="footer">
+      FoodWorks Online Grocery<br/>
+      A Rails Jumpstart Project
+    </div>
+</div>
+</body>
+</html>
