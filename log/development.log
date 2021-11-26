@@ -1962,3 +1962,163 @@ Processing by ProductsController#index as HTML
 Completed 200 OK in 73ms (Views: 55.2ms | ActiveRecord: 15.0ms | Allocations: 12190)
 
 
+Started GET "/products" for ::1 at 2021-11-26 08:11:59 +0200
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:18
+  Rendered products/index.html.erb within layouts/application (Duration: 45.7ms | Allocations: 8352)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 56.1ms | Allocations: 11330)
+Completed 200 OK in 111ms (Views: 47.4ms | ActiveRecord: 11.7ms | Allocations: 12253)
+
+
+Started GET "/products/2" for ::1 at 2021-11-26 08:12:05 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (32.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 5.3ms | Allocations: 112)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.4ms | Allocations: 3161)
+Completed 200 OK in 68ms (Views: 22.5ms | ActiveRecord: 33.5ms | Allocations: 5211)
+
+
+Started GET "/products/2/edit" for ::1 at 2021-11-26 08:12:06 +0200
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (1.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 8.1ms | Allocations: 1229)
+  Rendered products/edit.html.erb within layouts/application (Duration: 13.9ms | Allocations: 1935)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 28.7ms | Allocations: 5146)
+Completed 200 OK in 37ms (Views: 29.6ms | ActiveRecord: 1.4ms | Allocations: 6232)
+
+
+Started PATCH "/products/2" for ::1 at 2021-11-26 08:12:15 +0200
+Processing by ProductsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"title"=>"Purple Grapes (1 bunch)", "price"=>"2.25", "description"=>" 1 bunch of approximately 90 purple grapes.", "stock"=>"12", "image_url"=>"purple_grapes.jpg"}, "commit"=>"Update Product", "id"=>"2"}
+  [1m[36mProduct Load (3.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:40:in `block in update'
+  [1m[36mProduct Update (103.1ms)[0m  [1m[33mUPDATE "products" SET "updated_at" = $1, "stock" = $2 WHERE "products"."id" = $3[0m  [["updated_at", "2021-11-26 06:12:15.430409"], ["stock", 12], ["id", 2]]
+  ↳ app/controllers/products_controller.rb:40:in `block in update'
+  [1m[36mTRANSACTION (91.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:40:in `block in update'
+Redirected to http://localhost:3000/products/2
+Completed 302 Found in 213ms (ActiveRecord: 199.9ms | Allocations: 3397)
+
+
+Started GET "/products/2" for ::1 at 2021-11-26 08:12:15 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (4.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 111)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 3174)
+Completed 200 OK in 21ms (Views: 10.4ms | ActiveRecord: 4.5ms | Allocations: 4266)
+
+
+Started GET "/products" for ::1 at 2021-11-26 08:12:18 +0200
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (2.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:18
+  Rendered products/index.html.erb within layouts/application (Duration: 16.0ms | Allocations: 4422)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 39.1ms | Allocations: 8117)
+Completed 200 OK in 42ms (Views: 38.2ms | ActiveRecord: 2.2ms | Allocations: 8511)
+
+
+Started GET "/products/7" for ::1 at 2021-11-26 08:13:32 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mProduct Load (1.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 108)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 3783)
+Completed 200 OK in 22ms (Views: 14.7ms | ActiveRecord: 1.7ms | Allocations: 4959)
+
+
+Started GET "/products/7/edit" for ::1 at 2021-11-26 08:13:34 +0200
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mProduct Load (1.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 4.9ms | Allocations: 1173)
+  Rendered products/edit.html.erb within layouts/application (Duration: 7.6ms | Allocations: 1345)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | Allocations: 4415)
+Completed 200 OK in 30ms (Views: 22.7ms | ActiveRecord: 1.6ms | Allocations: 5502)
+
+
+Started PATCH "/products/7" for ::1 at 2021-11-26 08:13:41 +0200
+Processing by ProductsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"title"=>"Eggs", "price"=>"4.99", "description"=>"12 in pack", "stock"=>"0.3", "image_url"=>"eggs.jpg"}, "commit"=>"Update Product", "id"=>"7"}
+  [1m[36mProduct Load (1.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 8.3ms | Allocations: 1844)
+  Rendered products/edit.html.erb within layouts/application (Duration: 9.4ms | Allocations: 2016)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.5ms | Allocations: 5012)
+Completed 422 Unprocessable Entity in 30ms (Views: 18.7ms | ActiveRecord: 1.7ms | Allocations: 7139)
+
+
+Started PATCH "/products/7" for ::1 at 2021-11-26 08:14:02 +0200
+Processing by ProductsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"title"=>"Eggs", "price"=>"4.99", "description"=>"12 in pack", "stock"=>"30", "image_url"=>"eggs.jpg"}, "commit"=>"Update Product", "id"=>"7"}
+  [1m[36mProduct Load (1.9ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:40:in `block in update'
+  [1m[36mProduct Update (2.0ms)[0m  [1m[33mUPDATE "products" SET "updated_at" = $1, "stock" = $2 WHERE "products"."id" = $3[0m  [["updated_at", "2021-11-26 06:14:02.550361"], ["stock", 30], ["id", 7]]
+  ↳ app/controllers/products_controller.rb:40:in `block in update'
+  [1m[36mTRANSACTION (66.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:40:in `block in update'
+Redirected to http://localhost:3000/products/7
+Completed 302 Found in 97ms (ActiveRecord: 71.9ms | Allocations: 3299)
+
+
+Started GET "/products/7" for ::1 at 2021-11-26 08:14:02 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mProduct Load (1.8ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 110)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 3173)
+Completed 200 OK in 30ms (Views: 14.0ms | ActiveRecord: 1.8ms | Allocations: 4265)
+
+
+Started GET "/products" for ::1 at 2021-11-26 08:14:05 +0200
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:18
+  Rendered products/index.html.erb within layouts/application (Duration: 24.2ms | Allocations: 5124)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 33.9ms | Allocations: 8120)
+Completed 200 OK in 37ms (Views: 33.2ms | ActiveRecord: 1.8ms | Allocations: 8514)
+
+
