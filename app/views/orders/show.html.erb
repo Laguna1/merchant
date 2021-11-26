@@ -1,16 +1,47 @@
-<h1>Order Page</h1>
+<h1>Your Order Page</h1>
 
-<p>
-  <strong>User:</strong>
-  <%= @order.user_id %>
-</p>
+<table>
+  <tr>
+    <th>Customer</th>
+    <td><%= @order.user_id %></td>
+  </tr>
+  <tr>
+    <th>Status:</th>
+    <td><%= @order.status %></td>
+  </tr>
+  <tr>
+    <th>Items:</th>
+    <td><%= @order.order_items.count %></td>
+  </tr>
+  <tr>
+    <th>Items</th>
+    <th>Title</th>
+    <th>Quantity</th>
+    <th>Unit Price</th>
+    <th>Subtotal</th>
+    <th></th>
+    
 
-<p>
-  <strong>Status:</strong>
-  <%= @order.status %>
-</p>
+  <% @order.order_items.each do |item| %>
+    <tr>
+      <td><%= image_tag "products/#{item.product.image_url}" %></td>
+      <td><%= item.product.title %></td>
+      <td><%= item.quantity %></td>
+      <td><%= print_price(item.product.price) %></td>
+      <td><%= print_price item.subtotal %></td>
+      <td><%= button_to  "Delete Item", item, :confirm => 'Are you sure?', :method => :delete %></td>
+</td>
+      
+    </tr>
+  <% end %>
 
-<p>Items: <%= @order.order_items.count %></p>
+  <th>Total Order Sum</th>
+  <td><%= print_price @order.total %></td>
+  <br />
+  
+</table>
 
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+<br />
+<p><%= button_to "Empty Cart", @order, data: { confirm: 'Are you sure?' }, method: :delete %></p>
+<br />
+<%= link_to 'All Orders', orders_path %>
