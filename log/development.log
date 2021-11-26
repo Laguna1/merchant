@@ -5445,3 +5445,54 @@ Processing by OrdersController#show as HTML
 Completed 200 OK in 42ms (Views: 28.7ms | ActiveRecord: 7.3ms | Allocations: 9771)
 
 
+Started GET "/orders/1" for ::1 at 2021-11-26 19:13:45 +0200
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrder Load (1.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:63:in `set_order'
+  Rendering layout layouts/application.html.erb
+  Rendering orders/show.html.erb within layouts/application
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "order_items" WHERE "order_items"."order_id" = $1[0m  [["order_id", 1]]
+  ↳ app/views/orders/show.html.erb:14
+  [1m[36mOrderItem Load (1.1ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."order_id" = $1[0m  [["order_id", 1]]
+  ↳ app/views/orders/show.html.erb:23
+  [1m[36mProduct Load (1.8ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/orders/show.html.erb:25
+  Rendered orders/show.html.erb within layouts/application (Duration: 30.7ms | Allocations: 6312)
+  Rendered layout layouts/application.html.erb (Duration: 31.1ms | Allocations: 6376)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 5.9ms | Allocations: 8132)
+
+
+  
+ActionView::Template::Error (undefined method `subtotal' for #<OrderItem:0x0000560852d6b630>):
+    26:       <td><%= item.product.title %></td>
+    27:       <td><%= item.quantity %></td>
+    28:       <td><%= print_price(item.product.price) %></td>
+    29:       <td><%= print_price item.subtotal %></td>
+    30:     </tr>
+    31:   <% end %>
+    32: </table>
+  
+app/views/orders/show.html.erb:29
+app/views/orders/show.html.erb:23
+Started GET "/orders/1" for ::1 at 2021-11-26 19:14:53 +0200
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrder Load (1.8ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:63:in `set_order'
+  Rendering layout layouts/application.html.erb
+  Rendering orders/show.html.erb within layouts/application
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "order_items" WHERE "order_items"."order_id" = $1[0m  [["order_id", 1]]
+  ↳ app/views/orders/show.html.erb:14
+  [1m[36mOrderItem Load (1.9ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."order_id" = $1[0m  [["order_id", 1]]
+  ↳ app/views/orders/show.html.erb:23
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/orders/show.html.erb:25
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/show.html.erb:25
+  Rendered orders/show.html.erb within layouts/application (Duration: 89.6ms | Allocations: 14397)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 100.3ms | Allocations: 17669)
+Completed 200 OK in 131ms (Views: 79.2ms | ActiveRecord: 33.1ms | Allocations: 22767)
+
+
