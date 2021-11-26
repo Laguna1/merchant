@@ -379,3 +379,26 @@ Processing by ProductsController#new as HTML
 Completed 200 OK in 20ms (Views: 18.4ms | ActiveRecord: 0.0ms | Allocations: 5250)
 
 
+Started GET "/products/new" for ::1 at 2021-11-26 06:27:22 +0200
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 3.2ms | Allocations: 1406)
+  Rendered products/new.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1742)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 201.6ms | Allocations: 13838)
+Completed 200 OK in 207ms (Views: 204.4ms | ActiveRecord: 0.0ms | Allocations: 14939)
+
+
+Started GET "/products" for ::1 at 2021-11-26 06:27:32 +0200
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:17
+  Rendered products/index.html.erb within layouts/application (Duration: 7.5ms | Allocations: 1396)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.7ms | Allocations: 4441)
+Completed 200 OK in 23ms (Views: 19.9ms | ActiveRecord: 1.5ms | Allocations: 4967)
+
+

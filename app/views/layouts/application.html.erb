@@ -11,6 +11,26 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="wrapper">
+    <div class="header">
+      <h1>FoodWorks</h1>
+      <p>Your Online Grocery</p>
+    </div>
+
+    <p style="color: green"><%= flash[:notice] %></p>
+
+    <div class="sidebar">
+      (sidebar)
+    </div>
+
+    <div class="main">
+      <%= yield %>
+    </div>
+
+    <div class="footer">
+      FoodWorks Online Grocery<br/>
+      A Rails Jumpstart Project
+    </div>
+</div>
   </body>
 </html>
