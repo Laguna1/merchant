@@ -2,21 +2,15 @@
 
 class OrderItemsController < ApplicationController
   before_action :set_order_item, only: %i[show edit update destroy]
-  before_action :load_order, only: [:create]
-
+  before_action :load_order, only: :create
   # GET /order_items/1/edit
   def edit; end
 
   # POST /order_items
   # POST /order_items.json
   def create
-    @order_item = @order.order_items.find_or_initialize_by(product_id: params[:product_id])
-    if @order_item.new_record?
-      @order_item.quantity = 1
-    else
-      @order_item.quantity += 1
-    end
-
+    @order_item = @order.order_items.new(quantity: 1, product_id: params[:product_id])
+    
     respond_to do |format|
       if @order_item.save
         format.html { redirect_to @order, notice: 'Successfully added product to cart.' }
