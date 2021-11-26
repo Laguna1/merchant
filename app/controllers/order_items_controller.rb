@@ -30,8 +30,13 @@ class OrderItemsController < ApplicationController
   # PATCH/PUT /order_items/1
   # PATCH/PUT /order_items/1.json
   def update
+    @order_item = OrderItem.find(params[:id])
     respond_to do |format|
-      if @order_item.update(order_item_params)
+      if order_item_params[:quantity].to_i.zero?
+      @order_item.destroy
+      format.html { redirect_to @order_item.order, notice: 'Order item is removed from cart.'}
+      format.json { head :no_content }
+      elsif @order_item.update(order_item_params)
         format.html { redirect_to order_url(session[:order_id]), notice: 'Quantity was successfully updated.' }
         format.json { render :show, status: :ok, location: @order_item }
       else
