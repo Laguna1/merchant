@@ -19,6 +19,7 @@
     <th>Quantity</th>
     <th>Unit Price</th>
     <th>Subtotal</th>
+    
 
   <% @order.order_items.each do |item| %>
     <tr>
@@ -27,8 +28,13 @@
       <td><%= item.quantity %></td>
       <td><%= print_price(item.product.price) %></td>
       <td><%= print_price item.subtotal %></td>
+      
     </tr>
   <% end %>
+
+  <th>Total Order Sum</th>
+  <td><%= print_price @order.total %></td>
+
 </table>
 
 <br />
