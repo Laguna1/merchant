@@ -2167,3 +2167,63 @@ Completed 200 OK in 1136ms (Views: 1105.5ms | ActiveRecord: 28.9ms | Allocations
 Completed 200 OK in 4277ms (Views: 3982.5ms | ActiveRecord: 66.9ms | Allocations: 79772)
 
 
+Started GET "/products" for ::1 at 2021-11-26 09:40:19 +0200
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (2.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:19
+  Rendered products/index.html.erb within layouts/application (Duration: 25.9ms | Allocations: 4937)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 38.3ms | Allocations: 8249)
+Completed 200 OK in 48ms (Views: 43.7ms | ActiveRecord: 2.6ms | Allocations: 9368)
+
+
+Started GET "/order_items/new?product_id=4" for ::1 at 2021-11-26 09:40:27 +0200
+Processing by OrderItemsController#new as HTML
+  Parameters: {"product_id"=>"4"}
+  Rendering layout layouts/application.html.erb
+  Rendering order_items/new.html.erb within layouts/application
+  Rendered order_items/_form.html.erb (Duration: 162.9ms | Allocations: 1989)
+  Rendered order_items/new.html.erb within layouts/application (Duration: 167.9ms | Allocations: 2767)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 201.1ms | Allocations: 6013)
+Completed 200 OK in 300ms (Views: 204.1ms | ActiveRecord: 7.6ms | Allocations: 11132)
+
+
+Started GET "/order_items" for ::1 at 2021-11-26 09:40:32 +0200
+Processing by OrderItemsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering order_items/index.html.erb within layouts/application
+  [1m[36mOrderItem Load (2.1ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items"[0m
+  ↳ app/views/order_items/index.html.erb:16
+  Rendered order_items/index.html.erb within layouts/application (Duration: 10.0ms | Allocations: 1152)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.2ms | Allocations: 4311)
+Completed 200 OK in 29ms (Views: 25.1ms | ActiveRecord: 2.1ms | Allocations: 4850)
+
+
+Started GET "/order_items/new?product_id=4" for ::1 at 2021-11-26 09:40:49 +0200
+Processing by OrderItemsController#new as HTML
+  Parameters: {"product_id"=>"4"}
+  Rendering layout layouts/application.html.erb
+  Rendering order_items/new.html.erb within layouts/application
+  Rendered order_items/_form.html.erb (Duration: 3.2ms | Allocations: 884)
+  Rendered order_items/new.html.erb within layouts/application (Duration: 5.1ms | Allocations: 989)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.6ms | Allocations: 4154)
+Completed 200 OK in 19ms (Views: 17.8ms | ActiveRecord: 0.0ms | Allocations: 4550)
+
+
+Started GET "/order_items" for ::1 at 2021-11-26 09:40:56 +0200
+Processing by OrderItemsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering order_items/index.html.erb within layouts/application
+  [1m[36mOrderItem Load (2.3ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items"[0m
+  ↳ app/views/order_items/index.html.erb:16
+  Rendered order_items/index.html.erb within layouts/application (Duration: 9.2ms | Allocations: 898)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.9ms | Allocations: 4056)
+Completed 200 OK in 26ms (Views: 22.3ms | ActiveRecord: 2.3ms | Allocations: 4460)
+
+
