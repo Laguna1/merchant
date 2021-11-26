@@ -1283,3 +1283,682 @@ Processing by ProductsController#index as HTML
 Completed 200 OK in 40ms (Views: 34.1ms | ActiveRecord: 4.3ms | Allocations: 7788)
 
 
+Started GET "/products/1" for ::1 at 2021-11-26 07:32:16 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (2.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 27.8ms | Allocations: 310)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 53.1ms | Allocations: 4076)
+Completed 200 OK in 64ms (Views: 53.8ms | ActiveRecord: 3.1ms | Allocations: 5556)
+
+
+Started GET "/products/1/edit" for ::1 at 2021-11-26 07:32:17 +0200
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (2.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 38.5ms | Allocations: 2104)
+  Rendered products/edit.html.erb within layouts/application (Duration: 67.0ms | Allocations: 2544)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 94.2ms | Allocations: 5603)
+Completed 200 OK in 104ms (Views: 96.8ms | ActiveRecord: 2.5ms | Allocations: 6816)
+
+
+Started GET "/products/1/edit" for ::1 at 2021-11-26 07:33:48 +0200
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 8.0ms | Allocations: 1614)
+  Rendered products/edit.html.erb within layouts/application (Duration: 19.5ms | Allocations: 2059)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 33.4ms | Allocations: 5350)
+Completed 200 OK in 79ms (Views: 68.7ms | ActiveRecord: 1.3ms | Allocations: 7147)
+
+
+Started GET "/products/1/edit" for ::1 at 2021-11-26 07:38:10 +0200
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1209)
+
+
+  
+SyntaxError (/home/oksana/merchant/app/models/product.rb:5: syntax error, unexpected '{', expecting =>
+... }, :greater_than_or_equal_to { 0 }
+...                              ^
+):
+  
+app/models/product.rb:5: syntax error, unexpected '{', expecting =>
+app/models/product.rb:5: syntax error, unexpected '{', expecting =>
+app/models/product.rb:5: syntax error, unexpected '{', expecting =>
+app/controllers/products_controller.rb:63:in `set_product'
+Started GET "/products/1/edit" for ::1 at 2021-11-26 07:38:56 +0200
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1206)
+
+
+  
+SyntaxError (/home/oksana/merchant/app/models/product.rb:5: syntax error, unexpected '{', expecting =>
+...er, :greater_than_or_equal_to { 0 }
+...                              ^
+):
+  
+app/models/product.rb:5: syntax error, unexpected '{', expecting =>
+app/models/product.rb:5: syntax error, unexpected '{', expecting =>
+app/models/product.rb:5: syntax error, unexpected '{', expecting =>
+app/controllers/products_controller.rb:63:in `set_product'
+Started GET "/products/1/edit" for ::1 at 2021-11-26 07:39:14 +0200
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1227)
+
+
+  
+SyntaxError (/home/oksana/merchant/app/models/product.rb:5: syntax error, unexpected integer literal, expecting =>
+...er, :greater_than_or_equal_to 0
+...                              ^
+):
+  
+app/models/product.rb:5: syntax error, unexpected integer literal, expecting =>
+app/models/product.rb:5: syntax error, unexpected integer literal, expecting =>
+app/models/product.rb:5: syntax error, unexpected integer literal, expecting =>
+app/controllers/products_controller.rb:63:in `set_product'
+Started GET "/products/1/edit" for ::1 at 2021-11-26 07:39:29 +0200
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 1206)
+
+
+  
+SyntaxError (/home/oksana/merchant/app/models/product.rb:5: syntax error, unexpected integer literal, expecting =>
+...er, :greater_than_or_equal_to 0
+...                              ^
+):
+  
+app/models/product.rb:5: syntax error, unexpected integer literal, expecting =>
+app/models/product.rb:5: syntax error, unexpected integer literal, expecting =>
+app/models/product.rb:5: syntax error, unexpected integer literal, expecting =>
+app/controllers/products_controller.rb:63:in `set_product'
+Started GET "/products/1/edit" for ::1 at 2021-11-26 07:41:51 +0200
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 1206)
+
+
+  
+SyntaxError (/home/oksana/merchant/app/models/product.rb:5: syntax error, unexpected integer literal, expecting =>
+... }, :greater_than_or_equal_to 0
+...                              ^
+):
+  
+app/models/product.rb:5: syntax error, unexpected integer literal, expecting =>
+app/models/product.rb:5: syntax error, unexpected integer literal, expecting =>
+app/models/product.rb:5: syntax error, unexpected integer literal, expecting =>
+app/controllers/products_controller.rb:63:in `set_product'
+Started GET "/products/1/edit" for ::1 at 2021-11-26 07:42:02 +0200
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 6.2ms | Allocations: 1243)
+  Rendered products/edit.html.erb within layouts/application (Duration: 7.2ms | Allocations: 1418)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.7ms | Allocations: 4490)
+Completed 200 OK in 73ms (Views: 16.1ms | ActiveRecord: 38.6ms | Allocations: 9987)
+
+
+Started GET "/products/1/edit" for ::1 at 2021-11-26 07:42:48 +0200
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1206)
+
+
+  
+SyntaxError (/home/oksana/merchant/app/models/product.rb:5: syntax error, unexpected '}', expecting =>
+...eater_than_or_equal_to => { 0 }
+...                              ^
+):
+  
+app/models/product.rb:5: syntax error, unexpected '}', expecting =>
+app/models/product.rb:5: syntax error, unexpected '}', expecting =>
+app/models/product.rb:5: syntax error, unexpected '}', expecting =>
+app/controllers/products_controller.rb:63:in `set_product'
+Started GET "/products/1" for ::1 at 2021-11-26 07:43:18 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1227)
+
+
+  
+SyntaxError (/home/oksana/merchant/app/models/product.rb:5: syntax error, unexpected '}', expecting =>
+...greater_than_or_equal_to: { 0 }
+...                              ^
+):
+  
+app/models/product.rb:5: syntax error, unexpected '}', expecting =>
+app/models/product.rb:5: syntax error, unexpected '}', expecting =>
+app/models/product.rb:5: syntax error, unexpected '}', expecting =>
+app/controllers/products_controller.rb:63:in `set_product'
+Started GET "/products/1" for ::1 at 2021-11-26 07:46:49 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 1206)
+
+
+  
+SyntaxError (/home/oksana/merchant/app/models/product.rb:5: syntax error, unexpected ':', expecting =>
+...rue, :greater_than_or_equal_to: 0 }, 
+...                              ^
+):
+  
+app/models/product.rb:5: syntax error, unexpected ':', expecting =>
+app/models/product.rb:5: syntax error, unexpected ':', expecting =>
+app/models/product.rb:5: syntax error, unexpected ':', expecting =>
+app/controllers/products_controller.rb:63:in `set_product'
+Started GET "/products/1" for ::1 at 2021-11-26 07:47:13 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1227)
+
+
+  
+SyntaxError (/home/oksana/merchant/app/models/product.rb:5: syntax error, unexpected ':', expecting =>
+...rue, :greater_than_or_equal_to: 0 }
+...                              ^
+):
+  
+app/models/product.rb:5: syntax error, unexpected ':', expecting =>
+app/models/product.rb:5: syntax error, unexpected ':', expecting =>
+app/models/product.rb:5: syntax error, unexpected ':', expecting =>
+app/controllers/products_controller.rb:63:in `set_product'
+Started GET "/products/1" for ::1 at 2021-11-26 07:48:01 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1208)
+
+
+  
+SyntaxError (/home/oksana/merchant/app/models/product.rb:5: syntax error, unexpected integer literal, expecting =>
+...ue, :greater_than_or_equal_to 0 }
+...                              ^
+):
+  
+app/models/product.rb:5: syntax error, unexpected integer literal, expecting =>
+app/models/product.rb:5: syntax error, unexpected integer literal, expecting =>
+app/models/product.rb:5: syntax error, unexpected integer literal, expecting =>
+app/controllers/products_controller.rb:63:in `set_product'
+Started GET "/products/1" for ::1 at 2021-11-26 07:48:14 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 3.3ms | Allocations: 318)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 96.7ms | Allocations: 3383)
+Completed 200 OK in 126ms (Views: 97.9ms | ActiveRecord: 8.1ms | Allocations: 9009)
+
+
+Started GET "/products/1/edit" for ::1 at 2021-11-26 07:50:36 +0200
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 3.0ms | Allocations: 1243)
+  Rendered products/edit.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1418)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 4456)
+Completed 200 OK in 40ms (Views: 12.6ms | ActiveRecord: 8.1ms | Allocations: 9893)
+
+
+Started PATCH "/products/1" for ::1 at 2021-11-26 07:50:43 +0200
+Processing by ProductsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"title"=>"Green Grapes (1 bunch)", "price"=>"2.0", "description"=>"1 bunch of approximately 80 green grapes.", "stock"=>"-50", "image_url"=>"green_grapes.jpg"}, "commit"=>"Update Product", "id"=>"1"}
+  [1m[36mProduct Load (2.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+[31mUnpermitted parameter: :stock[0m
+Redirected to http://localhost:3000/products/1
+Completed 302 Found in 35ms (ActiveRecord: 2.3ms | Allocations: 1426)
+
+
+Started GET "/products/1" for ::1 at 2021-11-26 07:50:43 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 114)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 3177)
+Completed 200 OK in 30ms (Views: 13.3ms | ActiveRecord: 1.4ms | Allocations: 4272)
+
+
+Started GET "/products/1/edit" for ::1 at 2021-11-26 07:50:53 +0200
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 5.7ms | Allocations: 1174)
+  Rendered products/edit.html.erb within layouts/application (Duration: 6.5ms | Allocations: 1346)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.8ms | Allocations: 4404)
+Completed 200 OK in 21ms (Views: 14.8ms | ActiveRecord: 1.6ms | Allocations: 5490)
+
+
+Started PATCH "/products/1" for ::1 at 2021-11-26 07:51:00 +0200
+Processing by ProductsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"title"=>"Green Grapes (1 bunch)", "price"=>"2.0", "description"=>"1 bunch of approximately 80 green grapes.", "stock"=>"hello", "image_url"=>"green_grapes.jpg"}, "commit"=>"Update Product", "id"=>"1"}
+  [1m[36mProduct Load (1.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+[31mUnpermitted parameter: :stock[0m
+Redirected to http://localhost:3000/products/1
+Completed 302 Found in 10ms (ActiveRecord: 1.5ms | Allocations: 1350)
+
+
+Started GET "/products/1" for ::1 at 2021-11-26 07:51:01 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 111)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 3174)
+Completed 200 OK in 21ms (Views: 13.9ms | ActiveRecord: 1.3ms | Allocations: 4267)
+
+
+Started GET "/products/1/edit" for ::1 at 2021-11-26 07:51:09 +0200
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (2.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 4.7ms | Allocations: 1174)
+  Rendered products/edit.html.erb within layouts/application (Duration: 5.6ms | Allocations: 1346)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.2ms | Allocations: 5109)
+Completed 200 OK in 29ms (Views: 23.1ms | ActiveRecord: 2.1ms | Allocations: 6195)
+
+
+Started PATCH "/products/1" for ::1 at 2021-11-26 07:51:16 +0200
+Processing by ProductsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"title"=>"Green Grapes (1 bunch)", "price"=>"2.0", "description"=>"1 bunch of approximately 80 green grapes.", "stock"=>"5.5", "image_url"=>"green_grapes.jpg"}, "commit"=>"Update Product", "id"=>"1"}
+  [1m[36mProduct Load (4.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+[31mUnpermitted parameter: :stock[0m
+Redirected to http://localhost:3000/products/1
+Completed 302 Found in 15ms (ActiveRecord: 4.6ms | Allocations: 1347)
+
+
+Started GET "/products/1" for ::1 at 2021-11-26 07:51:16 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (2.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 111)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 63.8ms | Allocations: 3161)
+Completed 200 OK in 78ms (Views: 65.0ms | ActiveRecord: 2.1ms | Allocations: 4254)
+
+
+Started GET "/products/1" for ::1 at 2021-11-26 07:51:57 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 122)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 3166)
+Completed 200 OK in 53ms (Views: 16.8ms | ActiveRecord: 11.6ms | Allocations: 8617)
+
+
+Started GET "/products/1/edit" for ::1 at 2021-11-26 07:51:59 +0200
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 5.5ms | Allocations: 1233)
+  Rendered products/edit.html.erb within layouts/application (Duration: 6.4ms | Allocations: 1406)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 5178)
+Completed 200 OK in 25ms (Views: 19.2ms | ActiveRecord: 1.5ms | Allocations: 6265)
+
+
+Started PATCH "/products/1" for ::1 at 2021-11-26 07:52:05 +0200
+Processing by ProductsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"title"=>"Green Grapes (1 bunch)", "price"=>"2.0", "description"=>"1 bunch of approximately 80 green grapes.", "stock"=>"-50", "image_url"=>"green_grapes.jpg"}, "commit"=>"Update Product", "id"=>"1"}
+  [1m[36mProduct Load (1.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 7.1ms | Allocations: 1942)
+  Rendered products/edit.html.erb within layouts/application (Duration: 8.9ms | Allocations: 2114)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.1ms | Allocations: 5110)
+Completed 422 Unprocessable Entity in 31ms (Views: 20.5ms | ActiveRecord: 1.4ms | Allocations: 7276)
+
+
+Started PATCH "/products/1" for ::1 at 2021-11-26 07:52:13 +0200
+Processing by ProductsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"title"=>"Green Grapes (1 bunch)", "price"=>"2.0", "description"=>"1 bunch of approximately 80 green grapes.", "stock"=>"hello", "image_url"=>"green_grapes.jpg"}, "commit"=>"Update Product", "id"=>"1"}
+  [1m[36mProduct Load (1.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 7.2ms | Allocations: 1899)
+  Rendered products/edit.html.erb within layouts/application (Duration: 8.3ms | Allocations: 2071)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.5ms | Allocations: 5067)
+Completed 422 Unprocessable Entity in 30ms (Views: 20.5ms | ActiveRecord: 1.5ms | Allocations: 7572)
+
+
+Started PATCH "/products/1" for ::1 at 2021-11-26 07:52:20 +0200
+Processing by ProductsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"title"=>"Green Grapes (1 bunch)", "price"=>"2.0", "description"=>"1 bunch of approximately 80 green grapes.", "stock"=>"5.5", "image_url"=>"green_grapes.jpg"}, "commit"=>"Update Product", "id"=>"1"}
+  [1m[36mProduct Load (1.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 8.8ms | Allocations: 1899)
+  Rendered products/edit.html.erb within layouts/application (Duration: 10.0ms | Allocations: 2071)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.7ms | Allocations: 5067)
+Completed 422 Unprocessable Entity in 28ms (Views: 20.7ms | ActiveRecord: 1.4ms | Allocations: 7174)
+
+
+Started PATCH "/products/1" for ::1 at 2021-11-26 07:52:28 +0200
+Processing by ProductsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"title"=>"Green Grapes (1 bunch)", "price"=>"2.0", "description"=>"1 bunch of approximately 80 green grapes.", "stock"=>"5.5", "image_url"=>"green_grapes.jpg"}, "commit"=>"Update Product", "id"=>"1"}
+  [1m[36mProduct Load (1.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 5.4ms | Allocations: 1841)
+  Rendered products/edit.html.erb within layouts/application (Duration: 8.9ms | Allocations: 2013)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 26.1ms | Allocations: 5009)
+Completed 422 Unprocessable Entity in 41ms (Views: 29.7ms | ActiveRecord: 1.5ms | Allocations: 7116)
+
+
+Started PATCH "/products/1" for ::1 at 2021-11-26 07:52:33 +0200
+Processing by ProductsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"title"=>"Green Grapes (1 bunch)", "price"=>"2.0", "description"=>"1 bunch of approximately 80 green grapes.", "stock"=>"5", "image_url"=>"green_grapes.jpg"}, "commit"=>"Update Product", "id"=>"1"}
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:40:in `block in update'
+  [1m[36mProduct Update (112.1ms)[0m  [1m[33mUPDATE "products" SET "updated_at" = $1, "stock" = $2 WHERE "products"."id" = $3[0m  [["updated_at", "2021-11-26 05:52:33.791667"], ["stock", 5], ["id", 1]]
+  ↳ app/controllers/products_controller.rb:40:in `block in update'
+  [1m[36mTRANSACTION (112.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:40:in `block in update'
+Redirected to http://localhost:3000/products/1
+Completed 302 Found in 288ms (ActiveRecord: 227.7ms | Allocations: 3358)
+
+
+Started GET "/products/1" for ::1 at 2021-11-26 07:52:34 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 111)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 3167)
+Completed 200 OK in 17ms (Views: 11.4ms | ActiveRecord: 1.3ms | Allocations: 4258)
+
+
+Started GET "/products" for ::1 at 2021-11-26 07:53:10 +0200
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:18
+  Rendered products/index.html.erb within layouts/application (Duration: 315.2ms | Allocations: 8596)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 323.0ms | Allocations: 11574)
+Completed 200 OK in 328ms (Views: 311.2ms | ActiveRecord: 13.1ms | Allocations: 12583)
+
+
+Started GET "/products/2" for ::1 at 2021-11-26 07:53:13 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (1.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 112)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.8ms | Allocations: 3769)
+Completed 200 OK in 31ms (Views: 22.8ms | ActiveRecord: 1.7ms | Allocations: 4954)
+
+
+Started GET "/products/2/edit" for ::1 at 2021-11-26 07:53:15 +0200
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (1.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 5.2ms | Allocations: 1230)
+  Rendered products/edit.html.erb within layouts/application (Duration: 6.6ms | Allocations: 1403)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | Allocations: 4468)
+Completed 200 OK in 23ms (Views: 15.7ms | ActiveRecord: 1.5ms | Allocations: 5555)
+
+
+Started PATCH "/products/2" for ::1 at 2021-11-26 07:53:22 +0200
+Processing by ProductsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"title"=>"Purple Grapes (1 bunch)", "price"=>"2.25", "description"=>" 1 bunch of approximately 90 purple grapes.", "stock"=>"5.5", "image_url"=>"purple_grapes.jpg"}, "commit"=>"Update Product", "id"=>"2"}
+  [1m[36mProduct Load (1.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 8.6ms | Allocations: 1844)
+  Rendered products/edit.html.erb within layouts/application (Duration: 11.2ms | Allocations: 2016)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.8ms | Allocations: 5012)
+Completed 422 Unprocessable Entity in 34ms (Views: 22.9ms | ActiveRecord: 1.5ms | Allocations: 7181)
+
+
+Started PATCH "/products/2" for ::1 at 2021-11-26 07:54:53 +0200
+Processing by ProductsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"title"=>"Purple Grapes (1 bunch)", "price"=>"2.25", "description"=>" 1 bunch of approximately 90 purple grapes.", "stock"=>"5.5", "image_url"=>"purple_grapes.jpg"}, "commit"=>"Update Product", "id"=>"2"}
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 9.7ms | Allocations: 1841)
+  Rendered products/edit.html.erb within layouts/application (Duration: 14.4ms | Allocations: 2013)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 27.0ms | Allocations: 5016)
+Completed 422 Unprocessable Entity in 39ms (Views: 29.5ms | ActiveRecord: 1.1ms | Allocations: 7124)
+
+
+Started PATCH "/products/2" for ::1 at 2021-11-26 07:54:55 +0200
+Processing by ProductsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"title"=>"Purple Grapes (1 bunch)", "price"=>"2.25", "description"=>" 1 bunch of approximately 90 purple grapes.", "stock"=>"5.5", "image_url"=>"purple_grapes.jpg"}, "commit"=>"Update Product", "id"=>"2"}
+  [1m[36mProduct Load (1.8ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 6.3ms | Allocations: 1841)
+  Rendered products/edit.html.erb within layouts/application (Duration: 8.6ms | Allocations: 2013)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.9ms | Allocations: 5009)
+Completed 422 Unprocessable Entity in 26ms (Views: 17.8ms | ActiveRecord: 1.8ms | Allocations: 7117)
+
+
+Started PATCH "/products/2" for ::1 at 2021-11-26 07:54:59 +0200
+Processing by ProductsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"title"=>"Purple Grapes (1 bunch)", "price"=>"2.25", "description"=>" 1 bunch of approximately 90 purple grapes.", "stock"=>"5", "image_url"=>"purple_grapes.jpg"}, "commit"=>"Update Product", "id"=>"2"}
+  [1m[36mProduct Load (1.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:40:in `block in update'
+  [1m[36mProduct Update (1.7ms)[0m  [1m[33mUPDATE "products" SET "updated_at" = $1, "stock" = $2 WHERE "products"."id" = $3[0m  [["updated_at", "2021-11-26 05:54:59.461112"], ["stock", 5], ["id", 2]]
+  ↳ app/controllers/products_controller.rb:40:in `block in update'
+  [1m[36mTRANSACTION (59.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:40:in `block in update'
+Redirected to http://localhost:3000/products/2
+Completed 302 Found in 80ms (ActiveRecord: 64.6ms | Allocations: 3332)
+
+
+Started GET "/products/2" for ::1 at 2021-11-26 07:54:59 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (1.9ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 111)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 3162)
+Completed 200 OK in 21ms (Views: 13.3ms | ActiveRecord: 1.9ms | Allocations: 4254)
+
+
+Started GET "/products" for ::1 at 2021-11-26 07:55:09 +0200
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:18
+  Rendered products/index.html.erb within layouts/application (Duration: 17.0ms | Allocations: 4419)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 27.3ms | Allocations: 8024)
+Completed 200 OK in 29ms (Views: 26.2ms | ActiveRecord: 1.8ms | Allocations: 8419)
+
+
+Started GET "/products" for ::1 at 2021-11-26 07:56:09 +0200
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (5.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:18
+  Rendered products/index.html.erb within layouts/application (Duration: 44.5ms | Allocations: 8333)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 51.9ms | Allocations: 11316)
+Completed 200 OK in 56ms (Views: 40.2ms | ActiveRecord: 13.2ms | Allocations: 12193)
+
+
+Started GET "/products" for ::1 at 2021-11-26 07:56:22 +0200
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (2.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:18
+  Rendered products/index.html.erb within layouts/application (Duration: 42.5ms | Allocations: 8329)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 49.9ms | Allocations: 11328)
+Completed 200 OK in 57ms (Views: 40.3ms | ActiveRecord: 11.2ms | Allocations: 12205)
+
+
+Started GET "/products" for ::1 at 2021-11-26 07:56:42 +0200
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (2.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:18
+  Rendered products/index.html.erb within layouts/application (Duration: 43.0ms | Allocations: 8295)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 57.9ms | Allocations: 11274)
+Completed 200 OK in 65ms (Views: 48.7ms | ActiveRecord: 10.9ms | Allocations: 12151)
+
+
+Started GET "/products" for ::1 at 2021-11-26 07:59:22 +0200
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:18
+  Rendered products/index.html.erb within layouts/application (Duration: 70.9ms | Allocations: 8347)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 90.0ms | Allocations: 11328)
+Completed 200 OK in 98ms (Views: 76.8ms | ActiveRecord: 15.2ms | Allocations: 12205)
+
+
+Started GET "/products" for ::1 at 2021-11-26 08:09:27 +0200
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (2.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:18
+  Rendered products/index.html.erb within layouts/application (Duration: 195.6ms | Allocations: 10941)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 312.9ms | Allocations: 13919)
+Completed 200 OK in 318ms (Views: 314.1ms | ActiveRecord: 88.1ms | Allocations: 14796)
+
+
+Started GET "/products" for ::1 at 2021-11-26 08:09:51 +0200
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (2.0ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:18
+  Rendered products/index.html.erb within layouts/application (Duration: 62.7ms | Allocations: 8519)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 78.4ms | Allocations: 11518)
+Completed 200 OK in 91ms (Views: 52.4ms | ActiveRecord: 31.7ms | Allocations: 12392)
+
+
+Started GET "/products" for ::1 at 2021-11-26 08:10:02 +0200
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (3.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:18
+  Rendered products/index.html.erb within layouts/application (Duration: 57.5ms | Allocations: 8333)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 66.9ms | Allocations: 11312)
+Completed 200 OK in 72ms (Views: 52.7ms | ActiveRecord: 15.7ms | Allocations: 12189)
+
+
+Started GET "/products" for ::1 at 2021-11-26 08:10:04 +0200
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:18
+  Rendered products/index.html.erb within layouts/application (Duration: 22.9ms | Allocations: 4422)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 31.5ms | Allocations: 7418)
+Completed 200 OK in 35ms (Views: 31.0ms | ActiveRecord: 1.9ms | Allocations: 7810)
+
+
+Started GET "/products" for ::1 at 2021-11-26 08:10:20 +0200
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (2.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:18
+  Rendered products/index.html.erb within layouts/application (Duration: 49.5ms | Allocations: 8313)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 67.9ms | Allocations: 11313)
+Completed 200 OK in 73ms (Views: 55.2ms | ActiveRecord: 15.0ms | Allocations: 12190)
+
+
