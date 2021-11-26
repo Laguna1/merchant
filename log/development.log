@@ -1227,3 +1227,59 @@ Migrating to AddStockToProducts (20211126051254)
   [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(2425540704361348245)[0m
   [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/products" for ::1 at 2021-11-26 07:27:29 +0200
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/oksana/merchant/app/helpers/products_helper.rb:14: syntax error, unexpected '<'
+      <span class="in_stock">In Stoc...
+      ^
+/home/oksana/merchant/app/helpers/products_helper.rb:14: syntax error, unexpected constant, expecting `do' or '{' or '('
+...<span class="in_stock">In Stock (##)</span>
+...                          ^~~~~
+/home/oksana/merchant/app/helpers/products_helper.rb:16: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+... <span class="out_stock">Out of Stock</span>
+...                             ^~
+/home/oksana/merchant/app/helpers/products_helper.rb:19: unterminated regexp meets end of file
+/home/oksana/merchant/app/helpers/products_helper.rb:19: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/helpers/products_helper.rb:14: syntax error, unexpected '<'
+app/helpers/products_helper.rb:14: syntax error, unexpected constant, expecting `do' or '{' or '('
+app/helpers/products_helper.rb:16: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/helpers/products_helper.rb:19: unterminated regexp meets end of file
+app/helpers/products_helper.rb:19: syntax error, unexpected end-of-input, expecting `end'
+app/helpers/products_helper.rb:14: syntax error, unexpected '<'
+app/helpers/products_helper.rb:14: syntax error, unexpected constant, expecting `do' or '{' or '('
+app/helpers/products_helper.rb:16: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/helpers/products_helper.rb:19: unterminated regexp meets end of file
+app/helpers/products_helper.rb:19: syntax error, unexpected end-of-input, expecting `end'
+app/helpers/products_helper.rb:14: syntax error, unexpected '<'
+app/helpers/products_helper.rb:14: syntax error, unexpected constant, expecting `do' or '{' or '('
+app/helpers/products_helper.rb:16: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/helpers/products_helper.rb:19: unterminated regexp meets end of file
+app/helpers/products_helper.rb:19: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/application_controller.rb:3:in `<main>'
+app/controllers/products_controller.rb:3:in `<main>'
+Started GET "/products" for ::1 at 2021-11-26 07:29:34 +0200
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (36.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:18
+  Rendered products/index.html.erb within layouts/application (Duration: 390.5ms | Allocations: 9062)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 880.7ms | Allocations: 12258)
+Completed 200 OK in 1104ms (Views: 939.6ms | ActiveRecord: 48.2ms | Allocations: 13748)
+
+
+Started GET "/products" for ::1 at 2021-11-26 07:29:49 +0200
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (4.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:18
+  Rendered products/index.html.erb within layouts/application (Duration: 22.6ms | Allocations: 4412)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 35.0ms | Allocations: 7396)
+Completed 200 OK in 40ms (Views: 34.1ms | ActiveRecord: 4.3ms | Allocations: 7788)
+
+
