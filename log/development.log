@@ -29230,3 +29230,324 @@ Processing by OrdersController#show as HTML
 Completed 200 OK in 2940ms (Views: 2423.6ms | ActiveRecord: 147.3ms | Allocations: 35707)
 
 
+Started GET "/orders" for ::1 at 2021-11-26 20:16:01 +0200
+Processing by OrdersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (1.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/orders/index.html.erb:13
+  Rendered orders/index.html.erb within layouts/application (Duration: 379.4ms | Allocations: 1319)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 385.5ms | Allocations: 4495)
+Completed 200 OK in 388ms (Views: 385.3ms | ActiveRecord: 1.0ms | Allocations: 5030)
+
+
+Started GET "/products" for ::1 at 2021-11-26 20:16:08 +0200
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (2.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:18
+  Rendered products/index.html.erb within layouts/application (Duration: 211.6ms | Allocations: 5399)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 218.1ms | Allocations: 8469)
+Completed 200 OK in 221ms (Views: 217.5ms | ActiveRecord: 2.3ms | Allocations: 9409)
+
+
+Started POST "/order_items?product_id=4" for ::1 at 2021-11-26 20:16:31 +0200
+Processing by OrderItemsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product_id"=>"4"}
+  [1m[36mOrder Load (1.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/order_items_controller.rb:62:in `load_order'
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/order_items_controller.rb:65:in `load_order'
+  [1m[36mOrder Create (469.1ms)[0m  [1m[32mINSERT INTO "orders" ("status", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["status", "unsubmitted"], ["created_at", "2021-11-26 18:16:31.535783"], ["updated_at", "2021-11-26 18:16:31.535783"]]
+  ↳ app/controllers/order_items_controller.rb:65:in `load_order'
+  [1m[36mTRANSACTION (526.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/order_items_controller.rb:65:in `load_order'
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/order_items_controller.rb:15:in `block in create'
+  [1m[36mProduct Load (1.8ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/order_items_controller.rb:15:in `block in create'
+  [1m[36mOrderItem Create (161.5ms)[0m  [1m[32mINSERT INTO "order_items" ("product_id", "order_id", "quantity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["product_id", 4], ["order_id", 2], ["quantity", 1], ["created_at", "2021-11-26 18:16:32.617273"], ["updated_at", "2021-11-26 18:16:32.617273"]]
+  ↳ app/controllers/order_items_controller.rb:15:in `block in create'
+  [1m[36mTRANSACTION (112.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/order_items_controller.rb:15:in `block in create'
+Redirected to http://localhost:3000/orders/2
+Completed 302 Found in 1367ms (ActiveRecord: 1277.5ms | Allocations: 7275)
+
+
+Started GET "/orders/2" for ::1 at 2021-11-26 20:16:32 +0200
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mOrder Load (0.9ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:63:in `set_order'
+  Rendering layout layouts/application.html.erb
+  Rendering orders/show.html.erb within layouts/application
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "order_items" WHERE "order_items"."order_id" = $1[0m  [["order_id", 2]]
+  ↳ app/views/orders/show.html.erb:14
+  [1m[36mOrderItem Load (11.2ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."order_id" = $1[0m  [["order_id", 2]]
+  ↳ app/views/orders/show.html.erb:24
+  [1m[36mProduct Load (2.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/orders/show.html.erb:26
+  Rendered orders/show.html.erb within layouts/application (Duration: 30.6ms | Allocations: 3245)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 37.2ms | Allocations: 6358)
+Completed 200 OK in 43ms (Views: 22.2ms | ActiveRecord: 16.8ms | Allocations: 7440)
+
+
+Started GET "/orders" for ::1 at 2021-11-26 20:17:37 +0200
+Processing by OrdersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (6.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/orders/index.html.erb:13
+  Rendered orders/index.html.erb within layouts/application (Duration: 14.6ms | Allocations: 1094)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.7ms | Allocations: 4265)
+Completed 200 OK in 27ms (Views: 19.8ms | ActiveRecord: 6.7ms | Allocations: 4659)
+
+
+Started GET "/products" for ::1 at 2021-11-26 20:17:39 +0200
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (24.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:18
+  Rendered products/index.html.erb within layouts/application (Duration: 50.5ms | Allocations: 5083)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 62.0ms | Allocations: 8205)
+Completed 200 OK in 64ms (Views: 38.8ms | ActiveRecord: 24.1ms | Allocations: 8596)
+
+
+Started GET "/products/4" for ::1 at 2021-11-26 20:17:44 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 2.3ms | Allocations: 399)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 3575)
+Completed 200 OK in 16ms (Views: 10.3ms | ActiveRecord: 1.1ms | Allocations: 4886)
+
+
+Started GET "/products" for ::1 at 2021-11-26 20:17:47 +0200
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:18
+  Rendered products/index.html.erb within layouts/application (Duration: 25.0ms | Allocations: 5067)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 34.8ms | Allocations: 8172)
+Completed 200 OK in 37ms (Views: 33.9ms | ActiveRecord: 1.9ms | Allocations: 8563)
+
+
+Started GET "/orders/1" for ::1 at 2021-11-26 20:19:37 +0200
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrder Load (1.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:63:in `set_order'
+  Rendering layout layouts/application.html.erb
+  Rendering orders/show.html.erb within layouts/application
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "order_items" WHERE "order_items"."order_id" = $1[0m  [["order_id", 1]]
+  ↳ app/views/orders/show.html.erb:14
+  [1m[36mOrderItem Load (2.1ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."order_id" = $1[0m  [["order_id", 1]]
+  ↳ app/views/orders/show.html.erb:25
+  [1m[36mProduct Load (2.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/orders/show.html.erb:27
+  [1m[36mProduct Load (2.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/show.html.erb:27
+  Rendered orders/show.html.erb within layouts/application (Duration: 34.3ms | Allocations: 5652)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 44.5ms | Allocations: 9004)
+Completed 200 OK in 55ms (Views: 39.1ms | ActiveRecord: 10.1ms | Allocations: 10794)
+
+
+Started GET "/orders/1" for ::1 at 2021-11-26 20:20:44 +0200
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrder Load (1.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:63:in `set_order'
+  Rendering layout layouts/application.html.erb
+  Rendering orders/show.html.erb within layouts/application
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "order_items" WHERE "order_items"."order_id" = $1[0m  [["order_id", 1]]
+  ↳ app/views/orders/show.html.erb:14
+  [1m[36mOrderItem Load (1.9ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."order_id" = $1[0m  [["order_id", 1]]
+  ↳ app/views/orders/show.html.erb:25
+  [1m[36mProduct Load (1.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/orders/show.html.erb:27
+  [1m[36mProduct Load (1.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/show.html.erb:27
+  Rendered orders/show.html.erb within layouts/application (Duration: 32.7ms | Allocations: 5161)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 42.5ms | Allocations: 8526)
+Completed 200 OK in 53ms (Views: 38.7ms | ActiveRecord: 7.8ms | Allocations: 10310)
+
+
+Started GET "/orders" for ::1 at 2021-11-26 20:20:54 +0200
+Processing by OrdersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (1.9ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/orders/index.html.erb:13
+  Rendered orders/index.html.erb within layouts/application (Duration: 7.8ms | Allocations: 1332)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 105.7ms | Allocations: 5072)
+Completed 200 OK in 108ms (Views: 104.7ms | ActiveRecord: 1.9ms | Allocations: 5596)
+
+
+Started GET "/products" for ::1 at 2021-11-26 20:20:56 +0200
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (3.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:18
+  Rendered products/index.html.erb within layouts/application (Duration: 32.5ms | Allocations: 5776)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 44.4ms | Allocations: 8882)
+Completed 200 OK in 48ms (Views: 43.6ms | ActiveRecord: 3.2ms | Allocations: 9766)
+
+
+Started GET "/orders/1" for ::1 at 2021-11-26 20:21:43 +0200
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrder Load (1.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:63:in `set_order'
+  Rendering layout layouts/application.html.erb
+  Rendering orders/show.html.erb within layouts/application
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "order_items" WHERE "order_items"."order_id" = $1[0m  [["order_id", 1]]
+  ↳ app/views/orders/show.html.erb:14
+  [1m[36mOrderItem Load (2.0ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."order_id" = $1[0m  [["order_id", 1]]
+  ↳ app/views/orders/show.html.erb:25
+  [1m[36mProduct Load (2.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/orders/show.html.erb:27
+  [1m[36mProduct Load (1.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/show.html.erb:27
+  Rendered orders/show.html.erb within layouts/application (Duration: 27.3ms | Allocations: 5224)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 38.3ms | Allocations: 8558)
+Completed 200 OK in 47ms (Views: 32.8ms | ActiveRecord: 9.2ms | Allocations: 10346)
+
+
+Started DELETE "/order_items/9" for ::1 at 2021-11-26 20:21:58 +0200
+Processing by OrderItemsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"9"}
+  [1m[36mOrderItem Load (1.3ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/order_items_controller.rb:53:in `set_order_item'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/order_items_controller.rb:42:in `destroy'
+  [1m[36mOrderItem Destroy (16.8ms)[0m  [1m[31mDELETE FROM "order_items" WHERE "order_items"."id" = $1[0m  [["id", 9]]
+  ↳ app/controllers/order_items_controller.rb:42:in `destroy'
+  [1m[36mTRANSACTION (44.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/order_items_controller.rb:42:in `destroy'
+Redirected to http://localhost:3000/orders/2
+Completed 302 Found in 78ms (ActiveRecord: 63.1ms | Allocations: 2882)
+
+
+Started GET "/orders/2" for ::1 at 2021-11-26 20:21:58 +0200
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mOrder Load (1.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:63:in `set_order'
+  Rendering layout layouts/application.html.erb
+  Rendering orders/show.html.erb within layouts/application
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "order_items" WHERE "order_items"."order_id" = $1[0m  [["order_id", 2]]
+  ↳ app/views/orders/show.html.erb:14
+  [1m[36mOrderItem Load (1.8ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."order_id" = $1[0m  [["order_id", 2]]
+  ↳ app/views/orders/show.html.erb:25
+  [1m[36mProduct Load (1.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/orders/show.html.erb:27
+  Rendered orders/show.html.erb within layouts/application (Duration: 15.4ms | Allocations: 3359)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.8ms | Allocations: 6470)
+Completed 200 OK in 32ms (Views: 20.3ms | ActiveRecord: 6.7ms | Allocations: 7552)
+
+
+Started GET "/orders/2" for ::1 at 2021-11-26 20:23:41 +0200
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mOrder Load (0.9ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:63:in `set_order'
+  Rendering layout layouts/application.html.erb
+  Rendering orders/show.html.erb within layouts/application
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "order_items" WHERE "order_items"."order_id" = $1[0m  [["order_id", 2]]
+  ↳ app/views/orders/show.html.erb:14
+  [1m[36mOrderItem Load (1.5ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."order_id" = $1[0m  [["order_id", 2]]
+  ↳ app/views/orders/show.html.erb:25
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/orders/show.html.erb:27
+  Rendered orders/show.html.erb within layouts/application (Duration: 88.0ms | Allocations: 13228)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 96.2ms | Allocations: 16254)
+Completed 200 OK in 174ms (Views: 82.3ms | ActiveRecord: 27.7ms | Allocations: 21360)
+
+
+Started GET "/orders" for ::1 at 2021-11-26 20:23:45 +0200
+Processing by OrdersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (2.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/orders/index.html.erb:13
+  Rendered orders/index.html.erb within layouts/application (Duration: 9.6ms | Allocations: 1388)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.4ms | Allocations: 5053)
+Completed 200 OK in 25ms (Views: 21.1ms | ActiveRecord: 2.0ms | Allocations: 5576)
+
+
+Started GET "/orders/2" for ::1 at 2021-11-26 20:23:49 +0200
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mOrder Load (1.6ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:63:in `set_order'
+  Rendering layout layouts/application.html.erb
+  Rendering orders/show.html.erb within layouts/application
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "order_items" WHERE "order_items"."order_id" = $1[0m  [["order_id", 2]]
+  ↳ app/views/orders/show.html.erb:14
+  [1m[36mOrderItem Load (2.2ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."order_id" = $1[0m  [["order_id", 2]]
+  ↳ app/views/orders/show.html.erb:25
+  [1m[36mProduct Load (2.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/orders/show.html.erb:27
+  Rendered orders/show.html.erb within layouts/application (Duration: 20.4ms | Allocations: 3354)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 31.7ms | Allocations: 6462)
+Completed 200 OK in 42ms (Views: 27.4ms | ActiveRecord: 8.0ms | Allocations: 7538)
+
+
+Started DELETE "/order_items/10" for ::1 at 2021-11-26 20:23:51 +0200
+Processing by OrderItemsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"10"}
+  [1m[36mOrderItem Load (0.8ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/order_items_controller.rb:53:in `set_order_item'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/order_items_controller.rb:42:in `destroy'
+  [1m[36mOrderItem Destroy (1.0ms)[0m  [1m[31mDELETE FROM "order_items" WHERE "order_items"."id" = $1[0m  [["id", 10]]
+  ↳ app/controllers/order_items_controller.rb:42:in `destroy'
+  [1m[36mTRANSACTION (30.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/order_items_controller.rb:42:in `destroy'
+Redirected to http://localhost:3000/order_items.2
+Completed 302 Found in 40ms (ActiveRecord: 33.0ms | Allocations: 2974)
+
+
+Started GET "/order_items.2" for ::1 at 2021-11-26 20:23:51 +0200
+Processing by OrderItemsController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering order_items/index.html.erb within layouts/application
+  Rendered order_items/index.html.erb within layouts/application (Duration: 241.2ms | Allocations: 1988)
+  Rendered layout layouts/application.html.erb (Duration: 241.6ms | Allocations: 2052)
+Completed 500 Internal Server Error in 245ms (ActiveRecord: 0.0ms | Allocations: 2794)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    11:   </thead>
+    12: 
+    13:   <tbody>
+    14:     <% @order_items.each do |order_item| %>
+    15:       <tr>
+    16:         <td><%= order_item.product_id %></td>
+    17:         <td><%= order_item.order_id %></td>
+  
+app/views/order_items/index.html.erb:14
