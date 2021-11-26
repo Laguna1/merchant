@@ -5,38 +5,28 @@
 <table>
   <thead>
     <tr>
-     <th>Image</th>
+      <th>Image url</th>
       <th>Title</th>
       <th>Description</th>
       <th>Price</th>
-      <th>Stock</th>
-      <th>Product page</th>
+      <th>In Stock</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-  <% @products.each do |product| %>
-    <tr>
-      <td><%= image_tag "products/#{product.image_url}" %></td>
-      <td><span class="product_title"><%= product.title %></span></td>
-      <td><%= product.description %></td>
-      <td><%= print_price(product.price) %></td>
-      <td><% if print_stock(product.stock) %>
-      <span class="in_stock">In Stock: (<strong><%= product.stock.to_i %></strong>)</span>
-   <% else %>
-      <span class="out_stock">Out of Stock</span>
-   <% end %></td>
-      <td><%= link_to 'Show', product_path(product) %></td>
-      <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %> </td>
-    </tr>
-    
-        <% end %>
-    
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= image_tag "products/#{product.image_url}" %></td>
+        <td><span class="product_title"><%= link_to product.title, product_path(product) %></span></td>
+            <td><%= product.description %></td>
+        <td><%= print_price(product.price) %></td>
+        <td><%= print_stock(product.stock) %></td>
+      </tr>
+    <% end %>
   </tbody>
 </table>
 
 <br>
 
-<p><%= link_to "Create a New Product", new_product_path, id: "new_product"%></p>
-
+<%= link_to 'Create a New Product', new_product_path %>

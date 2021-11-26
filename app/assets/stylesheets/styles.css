@@ -7,10 +7,10 @@ form{
 div.sidebar{
   display: none;
 }
-
+/* 
 div.header p, div.main h1{
   display: none;
-}
+} */
 
 div#account{
  width: 20%;
