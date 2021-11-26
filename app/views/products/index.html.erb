@@ -17,12 +17,9 @@
     <% @products.each do |product| %>
       <tr>
         <td><%= image_tag "products/#{product.image_url}" %></td>
-        <td><span class="product_title"><%= product.title %></span><%= product.description %></td>
+        <td><span class="product_title"><%= link_to product.title, product_path(product) %></span></td>
+            <td><%= product.description %></td>
         <td><%= print_price(product.price) %></td>
-        
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
