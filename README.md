@@ -1,5 +1,14 @@
 # README
 
+This is a small project for a small online store.
+- The creation of new products with the product image
+- display in the list of products, 
+- the product card, 
+- the list of orders, 
+- the order card, 
+- the function of check of the remains of a product are developed.
+
+
 * Ruby version - `2.7.2`
 - Rails version - `6.1.4.1`
 - Postgres: >=9.5

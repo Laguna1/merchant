@@ -1,3 +1,4 @@
+<p id="notice"><%= notice %></p>
 <h1>Your Order Page</h1>
 
 <table>
@@ -17,6 +18,7 @@
     <th>Items</th>
     <th>Title</th>
     <th>Quantity</th>
+    <th>Stock</th>
     <th>Unit Price</th>
     <th>Subtotal</th>
     <th></th>
@@ -26,8 +28,9 @@
     <tr>
       <td><%= image_tag "products/#{item.product.image_url}" %></td>
       <td><%= item.product.title %></td>
-      <td><%= item.quantity %></td>
-      <td><%= print_price(item.product.price) %></td>
+      <td><%= link_to item.quantity, edit_order_item_path(item) %></td>
+      <td><%= print_stock item.product.stock, item.quantity %></td>
+      <td><%= print_price item.product.price %></td>
       <td><%= print_price item.subtotal %></td>
       <td><%= button_to  "Delete Item", item, :confirm => 'Are you sure?', :method => :delete %></td>
 </td>
