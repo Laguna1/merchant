@@ -185,3 +185,197 @@ Entrypoint application = js/application-be412d64645010827f4e.js js/application-b
 Completed 200 OK in 12297ms (Views: 12288.9ms | ActiveRecord: 2.5ms | Allocations: 21810)
 
 
+Started GET "/products/new" for ::1 at 2021-11-26 06:14:03 +0200
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 1187.7ms | Allocations: 7056)
+  Rendered products/new.html.erb within layouts/application (Duration: 1189.6ms | Allocations: 7400)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 1198.3ms | Allocations: 10281)
+Completed 200 OK in 1419ms (Views: 1203.4ms | ActiveRecord: 118.9ms | Allocations: 18060)
+
+
+Started GET "/products/new" for ::1 at 2021-11-26 06:14:05 +0200
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 4.4ms | Allocations: 1039)
+  Rendered products/new.html.erb within layouts/application (Duration: 5.5ms | Allocations: 1144)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | Allocations: 4123)
+Completed 200 OK in 23ms (Views: 21.2ms | ActiveRecord: 0.0ms | Allocations: 4530)
+
+
+Started POST "/products" for ::1 at 2021-11-26 06:14:49 +0200
+Processing by ProductsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"title"=>"Green Grapes (1 bunch)", "price"=>"2.00", "description"=>"1 bunch of approximately 80 green grapes.", "image_url"=>"green_grapes.jpg"}, "commit"=>"Create Product"}
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:27:in `block in create'
+  [1m[36mProduct Create (3.8ms)[0m  [1m[32mINSERT INTO "products" ("title", "price", "description", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Green Grapes (1 bunch)"], ["price", "2.0"], ["description", "1 bunch of approximately 80 green grapes."], ["image_url", "green_grapes.jpg"], ["created_at", "2021-11-26 04:14:49.336784"], ["updated_at", "2021-11-26 04:14:49.336784"]]
+  ↳ app/controllers/products_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (143.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:27:in `block in create'
+Redirected to http://localhost:3000/products/1
+Completed 302 Found in 190ms (ActiveRecord: 148.9ms | Allocations: 2952)
+
+
+Started GET "/products/1" for ::1 at 2021-11-26 06:14:49 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:62:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 1.8ms | Allocations: 319)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 3242)
+Completed 200 OK in 37ms (Views: 12.4ms | ActiveRecord: 3.3ms | Allocations: 6876)
+
+
+Started GET "/products" for ::1 at 2021-11-26 06:15:03 +0200
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (2.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:17
+  Rendered products/index.html.erb within layouts/application (Duration: 8.2ms | Allocations: 1021)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.1ms | Allocations: 4013)
+Completed 200 OK in 21ms (Views: 17.9ms | ActiveRecord: 2.3ms | Allocations: 4422)
+
+
+Started GET "/products/new" for ::1 at 2021-11-26 06:15:07 +0200
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 4.2ms | Allocations: 1041)
+  Rendered products/new.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1146)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | Allocations: 4129)
+Completed 200 OK in 21ms (Views: 19.7ms | ActiveRecord: 0.0ms | Allocations: 5229)
+
+
+Started POST "/products" for ::1 at 2021-11-26 06:15:37 +0200
+Processing by ProductsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"title"=>"Purple Grapes (1 bunch)", "price"=>"2.25", "description"=>" 1 bunch of approximately 90 purple grapes.", "image_url"=>"purple_grapes.jpg"}, "commit"=>"Create Product"}
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:27:in `block in create'
+  [1m[36mProduct Create (1.8ms)[0m  [1m[32mINSERT INTO "products" ("title", "price", "description", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Purple Grapes (1 bunch)"], ["price", "2.25"], ["description", " 1 bunch of approximately 90 purple grapes."], ["image_url", "purple_grapes.jpg"], ["created_at", "2021-11-26 04:15:37.478804"], ["updated_at", "2021-11-26 04:15:37.478804"]]
+  ↳ app/controllers/products_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (59.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:27:in `block in create'
+Redirected to http://localhost:3000/products/2
+Completed 302 Found in 73ms (ActiveRecord: 63.3ms | Allocations: 2710)
+
+
+Started GET "/products/2" for ::1 at 2021-11-26 06:15:37 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (1.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:62:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 111)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 3092)
+Completed 200 OK in 14ms (Views: 8.6ms | ActiveRecord: 1.5ms | Allocations: 4184)
+
+
+Started GET "/products" for ::1 at 2021-11-26 06:15:41 +0200
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:17
+  Rendered products/index.html.erb within layouts/application (Duration: 11.7ms | Allocations: 1123)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 28.0ms | Allocations: 4801)
+Completed 200 OK in 31ms (Views: 28.5ms | ActiveRecord: 1.5ms | Allocations: 5195)
+
+
+Started GET "/products/1" for ::1 at 2021-11-26 06:16:15 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.9ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:62:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 4.0ms | Allocations: 109)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.6ms | Allocations: 3096)
+Completed 200 OK in 22ms (Views: 14.5ms | ActiveRecord: 1.9ms | Allocations: 4181)
+
+
+Started GET "/products" for ::1 at 2021-11-26 06:16:18 +0200
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:17
+  Rendered products/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 1123)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.6ms | Allocations: 4101)
+Completed 200 OK in 18ms (Views: 15.1ms | ActiveRecord: 1.5ms | Allocations: 4496)
+
+
+Started GET "/products" for ::1 at 2021-11-26 06:22:33 +0200
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:17
+  Rendered products/index.html.erb within layouts/application (Duration: 52.9ms | Allocations: 7532)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 61.6ms | Allocations: 10690)
+Completed 200 OK in 108ms (Views: 104.7ms | ActiveRecord: 22.6ms | Allocations: 12101)
+
+
+Started GET "/products" for ::1 at 2021-11-26 06:22:37 +0200
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:17
+  Rendered products/index.html.erb within layouts/application (Duration: 8.4ms | Allocations: 1138)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.7ms | Allocations: 4124)
+Completed 200 OK in 22ms (Views: 18.0ms | ActiveRecord: 1.4ms | Allocations: 4522)
+
+
+Started GET "/products/1" for ::1 at 2021-11-26 06:22:47 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:61:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 309)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 3884)
+Completed 200 OK in 21ms (Views: 11.9ms | ActiveRecord: 2.8ms | Allocations: 5363)
+
+
+Started GET "/products" for ::1 at 2021-11-26 06:23:11 +0200
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (3.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:17
+  Rendered products/index.html.erb within layouts/application (Duration: 14.1ms | Allocations: 1126)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.6ms | Allocations: 4105)
+Completed 200 OK in 28ms (Views: 23.2ms | ActiveRecord: 3.4ms | Allocations: 4502)
+
+
+Started GET "/products/new" for ::1 at 2021-11-26 06:23:12 +0200
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 6.2ms | Allocations: 1411)
+  Rendered products/new.html.erb within layouts/application (Duration: 9.4ms | Allocations: 1748)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.9ms | Allocations: 4727)
+Completed 200 OK in 20ms (Views: 18.4ms | ActiveRecord: 0.0ms | Allocations: 5250)
+
+
