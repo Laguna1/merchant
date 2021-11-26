@@ -402,3 +402,123 @@ Processing by ProductsController#index as HTML
 Completed 200 OK in 23ms (Views: 19.9ms | ActiveRecord: 1.5ms | Allocations: 4967)
 
 
+Started GET "/products" for ::1 at 2021-11-26 06:30:26 +0200
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (2.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:17
+  Rendered products/index.html.erb within layouts/application (Duration: 11.3ms | Allocations: 1123)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 98.1ms | Allocations: 13188)
+Completed 200 OK in 100ms (Views: 96.4ms | ActiveRecord: 2.7ms | Allocations: 13582)
+
+
+Started GET "/products" for ::1 at 2021-11-26 06:30:42 +0200
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:17
+  Rendered products/index.html.erb within layouts/application (Duration: 7.7ms | Allocations: 1123)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.2ms | Allocations: 4209)
+Completed 200 OK in 22ms (Views: 18.7ms | ActiveRecord: 1.9ms | Allocations: 4600)
+
+
+Started GET "/products" for ::1 at 2021-11-26 06:31:33 +0200
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:17
+  Rendered products/index.html.erb within layouts/application (Duration: 7.8ms | Allocations: 1395)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.5ms | Allocations: 4658)
+Completed 200 OK in 23ms (Views: 19.8ms | ActiveRecord: 1.3ms | Allocations: 5764)
+
+
+Started GET "/products" for ::1 at 2021-11-26 06:31:54 +0200
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (2.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:17
+  Rendered products/index.html.erb within layouts/application (Duration: 11.1ms | Allocations: 1394)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.0ms | Allocations: 4657)
+Completed 200 OK in 28ms (Views: 24.6ms | ActiveRecord: 2.2ms | Allocations: 5758)
+
+
+Started GET "/products" for ::1 at 2021-11-26 06:32:36 +0200
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:17
+  Rendered products/index.html.erb within layouts/application (Duration: 11.9ms | Allocations: 1132)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.6ms | Allocations: 4217)
+Completed 200 OK in 28ms (Views: 25.4ms | ActiveRecord: 1.1ms | Allocations: 4610)
+
+
+Started GET "/products" for ::1 at 2021-11-26 06:34:57 +0200
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (3.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:17
+  Rendered products/index.html.erb within layouts/application (Duration: 173.5ms | Allocations: 4786)
+  Rendered layout layouts/application.html.erb (Duration: 174.0ms | Allocations: 4850)
+Completed 500 Internal Server Error in 178ms (ActiveRecord: 3.3ms | Allocations: 5933)
+
+
+  
+ActionView::Template::Error (The asset "products/green_grapes.jpg" is not present in the asset pipeline.
+):
+    16:   <tbody>
+    17:     <% @products.each do |product| %>
+    18:       <tr>
+    19:         <td><%= image_tag "products/#{product.image_url}" %></td>
+    20:         <td><span class="product_title"><%= product.title %></span><%= product.description %></td>
+    21:         <td><%= product.price %></td>
+    22:         
+  
+app/views/products/index.html.erb:19
+app/views/products/index.html.erb:17
+Started GET "/products" for ::1 at 2021-11-26 06:37:55 +0200
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (2.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:17
+  Rendered products/index.html.erb within layouts/application (Duration: 13.6ms | Allocations: 2694)
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | Allocations: 2758)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 2.2ms | Allocations: 3945)
+
+
+  
+ActionView::Template::Error (The asset "products/green_grapes.jpg" is not present in the asset pipeline.
+):
+    16:   <tbody>
+    17:     <% @products.each do |product| %>
+    18:       <tr>
+    19:         <td><%= image_tag "products/#{product.image_url}" %></td>
+    20:         <td><span class="product_title"><%= product.title %></span><%= product.description %></td>
+    21:         <td><%= product.price %></td>
+    22:         
+  
+app/views/products/index.html.erb:19
+app/views/products/index.html.erb:17
+Started GET "/products" for ::1 at 2021-11-26 06:39:28 +0200
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (2.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:17
+  Rendered products/index.html.erb within layouts/application (Duration: 648.3ms | Allocations: 16592)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 660.6ms | Allocations: 19841)
+Completed 200 OK in 663ms (Views: 659.5ms | ActiveRecord: 2.2ms | Allocations: 20242)
+
+
