@@ -9,7 +9,7 @@ class OrderItemsController < ApplicationController
   # POST /order_items
   # POST /order_items.json
   def create
-    @order_item = @order.order_items.new(quantity: 1, product_id: params[:product_id])
+    @order_item = @order.order_items.find_or_initialize_by_product_id(params[:product_id])
 
     respond_to do |format|
       if @order_item.save
