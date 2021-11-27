@@ -49,3 +49,5 @@ Feel free to check the [issues page](https://github.com/Laguna1/merchant/issues)
 ## Show your support
 
 Give a ⭐️ if you like this project!
+"bk1HZdrOH7Tj3n8NJ6uxs6WX0", "4UzTT6HyUCIzXNFXWFHcsxHcLRpzM47y9uKMxFSMBOT85brzNN"
+provider :twitter, Rails.application.credentials.dig(:twitter, "bk1HZdrOH7Tj3n8NJ6uxs6WX0"), Rails.application.credentials.dig(:twitter, "4UzTT6HyUCIzXNFXWFHcsxHcLRpzM47y9uKMxFSMBOT85brzNN")
