@@ -32466,3 +32466,27 @@ Processing by ProductsController#index as HTML
 Completed 200 OK in 117ms (Views: 89.1ms | ActiveRecord: 13.6ms | Allocations: 23996)
 
 
+Started GET "/products" for ::1 at 2021-11-27 21:58:12 +0200
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:18
+  Rendered products/index.html.erb within layouts/application (Duration: 1091.3ms | Allocations: 8694)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7215.8ms | Allocations: 18633)
+Completed 500 Internal Server Error in 7647ms (ActiveRecord: 444.6ms | Allocations: 19601)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `current_user' for #<ActionView::Base:0x00000000009d80>
+Did you mean?  current_page?):
+    20:     <p style="color: green"><%= flash[:notice] %></p>
+    21:     <p style="color: red"><%= flash[:alert] %></p>
+    22:     <div id="account">
+    23:       <% if current_user %>
+    24:         <span>Welcome, <%= current_user.name %></span>
+    25:         <%= link_to "logout", logout_path, id: "login" %>
+    26:       <% else %>
+  
+app/views/layouts/application.html.erb:23
