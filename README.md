@@ -10,6 +10,7 @@ This is a small project for a small online store.
 - Implemented the twitter-omniauth
 
 ![Twitter](app/assets/images/twitter-omniauth.png)
+![Products List](app/assets/images/products-list.png)
 
 
 * Ruby version - `2.7.2`

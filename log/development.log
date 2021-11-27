@@ -32443,3 +32443,26 @@ Processing by ProductsController#index as HTML
 Completed 200 OK in 3605ms (Views: 3302.3ms | ActiveRecord: 120.3ms | Allocations: 45571)
 
 
+Started GET "/auth/twitter" for ::1 at 2021-11-27 21:49:11 +0200
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/auth/twitter/callback?oauth_token=[FILTERED]&oauth_verifier=y1oSQNYfcTWdhTl06W1EVSQIacFTA6DK" for ::1 at 2021-11-27 21:49:13 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"[FILTERED]", "oauth_verifier"=>"y1oSQNYfcTWdhTl06W1EVSQIacFTA6DK", "provider"=>"twitter"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 AND "users"."name" IS NULL LIMIT $3[0m  [["provider", "twitter"], ["uid", "1464633061707030528"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:3:in `find_or_create_by_auth'
+Redirected to http://localhost:3000/products
+Completed 302 Found in 35ms (ActiveRecord: 11.1ms | Allocations: 6456)
+
+
+Started GET "/products" for ::1 at 2021-11-27 21:49:14 +0200
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (2.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:18
+  Rendered products/index.html.erb within layouts/application (Duration: 83.2ms | Allocations: 17657)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 96.2ms | Allocations: 21347)
+Completed 200 OK in 117ms (Views: 89.1ms | ActiveRecord: 13.6ms | Allocations: 23996)
+
+
