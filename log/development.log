@@ -32721,3 +32721,132 @@ Processing by ProductsController#index as HTML
 Completed 200 OK in 98ms (Views: 47.4ms | ActiveRecord: 44.6ms | Allocations: 13727)
 
 
+Started GET "/" for ::1 at 2021-11-27 22:12:41 +0200
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (2.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:18
+  Rendered products/index.html.erb within layouts/application (Duration: 69.3ms | Allocations: 9246)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 88.5ms | Allocations: 12784)
+Completed 200 OK in 175ms (Views: 156.7ms | ActiveRecord: 12.8ms | Allocations: 14644)
+
+
+Started GET "/login" for ::1 at 2021-11-27 22:13:32 +0200
+Started GET "/auth/twitter" for ::1 at 2021-11-27 22:13:32 +0200
+Started GET "/login" for ::1 at 2021-11-27 22:13:34 +0200
+Started GET "/auth/twitter" for ::1 at 2021-11-27 22:13:34 +0200
+Started GET "/auth/twitter/callback?oauth_token=[FILTERED]&oauth_verifier=hErlFpfBGQrIJ4wic0xmiZD2EkEOpFjp" for ::1 at 2021-11-27 22:13:36 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"[FILTERED]", "oauth_verifier"=>"hErlFpfBGQrIJ4wic0xmiZD2EkEOpFjp", "provider"=>"twitter"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 AND "users"."name" IS NULL LIMIT $3[0m  [["provider", "twitter"], ["uid", "1464633061707030528"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:3:in `find_or_create_by_auth'
+Redirected to http://localhost:3000/products
+Completed 302 Found in 55ms (ActiveRecord: 11.0ms | Allocations: 3991)
+
+
+Started GET "/products" for ::1 at 2021-11-27 22:13:37 +0200
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:18
+  Rendered products/index.html.erb within layouts/application (Duration: 18.1ms | Allocations: 5127)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 212.0ms | Allocations: 9090)
+Completed 200 OK in 214ms (Views: 208.4ms | ActiveRecord: 4.4ms | Allocations: 9367)
+
+
+Started GET "/logout" for ::1 at 2021-11-27 22:14:48 +0200
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 195)
+
+
+Started GET "/" for ::1 at 2021-11-27 22:14:48 +0200
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:18
+  Rendered products/index.html.erb within layouts/application (Duration: 138.3ms | Allocations: 9057)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 149.0ms | Allocations: 12284)
+Completed 200 OK in 156ms (Views: 47.4ms | ActiveRecord: 103.1ms | Allocations: 13519)
+
+
+Started GET "/login" for ::1 at 2021-11-27 22:14:55 +0200
+Started GET "/auth/twitter" for ::1 at 2021-11-27 22:14:55 +0200
+Started GET "/login" for ::1 at 2021-11-27 22:14:56 +0200
+Started GET "/auth/twitter" for ::1 at 2021-11-27 22:14:56 +0200
+Started GET "/auth/twitter/callback?oauth_token=[FILTERED]&oauth_verifier=Q9Vl9FuAVr5DSfEV2OoqqJdRMjP04qTa" for ::1 at 2021-11-27 22:14:58 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"[FILTERED]", "oauth_verifier"=>"Q9Vl9FuAVr5DSfEV2OoqqJdRMjP04qTa", "provider"=>"twitter"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 AND "users"."name" IS NULL LIMIT $3[0m  [["provider", "twitter"], ["uid", "1464633061707030528"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:3:in `find_or_create_by_auth'
+Redirected to http://localhost:3000/products
+Completed 302 Found in 124ms (ActiveRecord: 11.7ms | Allocations: 4014)
+
+
+Started GET "/products" for ::1 at 2021-11-27 22:14:59 +0200
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (2.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:18
+  Rendered products/index.html.erb within layouts/application (Duration: 51.8ms | Allocations: 5122)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 71.4ms | Allocations: 9085)
+Completed 200 OK in 74ms (Views: 68.3ms | ActiveRecord: 4.8ms | Allocations: 9361)
+
+
+Started GET "/logout" for ::1 at 2021-11-27 22:19:45 +0200
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 193)
+
+
+Started GET "/" for ::1 at 2021-11-27 22:19:45 +0200
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (6.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:18
+  Rendered products/index.html.erb within layouts/application (Duration: 49.7ms | Allocations: 9049)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 58.7ms | Allocations: 12274)
+Completed 200 OK in 72ms (Views: 42.0ms | ActiveRecord: 18.8ms | Allocations: 13501)
+
+
+Started GET "/login" for ::1 at 2021-11-27 22:19:51 +0200
+Started GET "/auth/twitter" for ::1 at 2021-11-27 22:19:51 +0200
+Started GET "/login" for ::1 at 2021-11-27 22:19:52 +0200
+Started GET "/auth/twitter" for ::1 at 2021-11-27 22:19:52 +0200
+Started GET "/auth/twitter/callback?oauth_token=[FILTERED]&oauth_verifier=GfDvHeesQPZs2LcavZodUAz02KzZsPxW" for ::1 at 2021-11-27 22:19:53 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"[FILTERED]", "oauth_verifier"=>"GfDvHeesQPZs2LcavZodUAz02KzZsPxW", "provider"=>"twitter"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 AND "users"."name" IS NULL LIMIT $3[0m  [["provider", "twitter"], ["uid", "1464633061707030528"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:3:in `find_or_create_by_auth'
+Redirected to http://localhost:3000/products
+Completed 302 Found in 26ms (ActiveRecord: 7.7ms | Allocations: 4015)
+
+
+Started GET "/products" for ::1 at 2021-11-27 22:19:54 +0200
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:18
+  Rendered products/index.html.erb within layouts/application (Duration: 25.8ms | Allocations: 5124)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 41.8ms | Allocations: 9087)
+Completed 200 OK in 44ms (Views: 39.6ms | ActiveRecord: 3.5ms | Allocations: 9363)
+
+

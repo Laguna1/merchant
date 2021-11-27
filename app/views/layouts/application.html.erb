@@ -22,9 +22,9 @@
     <div id="account">
       <% if current_user %>
         <span>Welcome, <%= current_user.name %></span>
-        <%= link_to "logout", logout_path, id: "login" %>
+        <%= link_to "Log Out", logout_path, id: "login" %>
       <% else %>
-        <%= link_to "login", login_path, id: "logout" %>
+        <%= link_to "Log In", login_path, id: "logout" %>
       <% end %>
     </div>
 

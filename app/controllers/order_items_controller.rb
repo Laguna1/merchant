@@ -18,7 +18,7 @@ class OrderItemsController < ApplicationController
     respond_to do |format|
       if @order_item.save
         # format.html { redirect_to @order_item, notice: 'Order item was successfully created.' }
-        format.html {redirect_to @order, notice: 'Successfully added product to cart.'}
+        format.html { redirect_to @order, notice: 'Successfully added product to cart.' }
         format.json { render :show, status: :created, location: @order_item }
       else
         format.html { render :new }
@@ -33,9 +33,9 @@ class OrderItemsController < ApplicationController
     @order_item = OrderItem.find(params[:id])
     respond_to do |format|
       if order_item_params[:quantity].to_i.zero?
-      @order_item.destroy
-      format.html { redirect_to @order_item.order, notice: 'Order item is removed from cart.'}
-      format.json { head :no_content }
+        @order_item.destroy
+        format.html { redirect_to @order_item.order, notice: 'Order item is removed from cart.' }
+        format.json { head :no_content }
       elsif @order_item.update(order_item_params)
         format.html { redirect_to order_url(session[:order_id]), notice: 'Quantity was successfully updated.' }
         format.json { render :show, status: :ok, location: @order_item }
