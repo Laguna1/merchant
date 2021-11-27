@@ -32524,3 +32524,82 @@ ActionView::Template::Error (undefined local variable or method `logout_path' fo
     28:       <% end %>
   
 app/views/layouts/application.html.erb:25
+Started GET "/products" for ::1 at 2021-11-27 22:03:08 +0200
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (2.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:18
+  Rendered products/index.html.erb within layouts/application (Duration: 53.3ms | Allocations: 9078)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 90.4ms | Allocations: 16018)
+Completed 200 OK in 99ms (Views: 70.0ms | ActiveRecord: 23.2ms | Allocations: 17287)
+
+
+Started GET "/logout" for ::1 at 2021-11-27 22:04:08 +0200
+  
+AbstractController::ActionNotFound (The action 'destroy' could not be found for SessionsController
+Did you mean?  create):
+  
+actionpack (6.1.4.1) lib/abstract_controller/base.rb:160:in `process'
+actionview (6.1.4.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:842:in `call'
+omniauth (2.0.4) lib/omniauth/strategy.rb:202:in `call!'
+omniauth (2.0.4) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.0.4) lib/omniauth/builder.rb:45:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4.1) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.3) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.4.1) lib/rails/engine.rb:539:in `call'
+puma (5.5.2) lib/puma/configuration.rb:249:in `call'
+puma (5.5.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.5.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.5.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.5.2) lib/puma/server.rb:447:in `process_client'
+puma (5.5.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
