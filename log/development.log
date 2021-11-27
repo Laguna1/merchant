@@ -32149,3 +32149,18 @@ Started GET "/auth/twitter/callback?oauth_token=[FILTERED]&oauth_verifier=qyuCwX
   
 ActionController::RoutingError (uninitialized constant SessionsController):
   
+Started GET "/auth/twitter" for ::1 at 2021-11-27 21:22:24 +0200
+Started GET "/auth/twitter/callback?oauth_token=[FILTERED]&oauth_verifier=y344R2GSqDv2GssLMb7sObaYGmsR82sq" for ::1 at 2021-11-27 21:22:51 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"[FILTERED]", "oauth_verifier"=>"y344R2GSqDv2GssLMb7sObaYGmsR82sq", "provider"=>"twitter"}
+Completed 500 Internal Server Error in 3681ms (Allocations: 2223)
+
+
+  
+ActionView::MissingTemplate (Missing template sessions/create, application/create with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/home/oksana/merchant/app/views"
+  * "/home/oksana/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actiontext-6.1.4.1/app/views"
+  * "/home/oksana/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/actionmailbox-6.1.4.1/app/views"
+):
+  
+app/controllers/sessions_controller.rb:3:in `create'
