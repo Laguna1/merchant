@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :addresses
   match '/auth/:provider/callback', to: 'sessions#create', via: 'get'
   match '/auth/failure', to: redirect('/'), via: 'get'
   match "/login" => redirect("/auth/twitter"), as: :login, via: :get
