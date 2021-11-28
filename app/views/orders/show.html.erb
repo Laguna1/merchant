@@ -4,7 +4,7 @@
 <table>
   <tr>
     <th>Customer</th>
-    <td><%= @order.user_id %></td>
+    <td><%= @order.user.name if @order.user %></td>
   </tr>
   <tr>
     <th>Status:</th>
@@ -21,7 +21,8 @@
     <th>Stock</th>
     <th>Unit Price</th>
     <th>Subtotal</th>
-    <th>Customer</th>
+    <th></th>
+    
     
 
   <% @order.order_items.each do |item| %>
@@ -35,7 +36,7 @@
       <td>
         <%= button_to  "Delete Item", item, :confirm => 'Are you sure?', :method => :delete %></td>
      </td>
-     <td><%= @order.user.name if @order.user %></td>
+     
 
       
     </tr>
