@@ -7,6 +7,10 @@ This is a small project for a small online store.
 - the list of orders, 
 - the order card, 
 - the function of check of the remains of a product are developed.
+- Implemented the twitter-omniauth
+
+![Twitter](app/assets/images/twitter-omniauth.png)
+![Products List](app/assets/images/products-list.png)
 
 
 * Ruby version - `2.7.2`
@@ -38,7 +42,7 @@ This is a small project for a small online store.
 
 - GitHub: [@github/Laguna1](https://github.com/Laguna1)
 - Linkedin: [linkedin/OksanaPetrova](https://www.linkedin.com/in/oksana-petrova/)
-- Twitter: [@OksanaP48303303](https://twitter.com/OksanaP48303303)
+- Twitter: [@OksanaP48303303](https://twitter.com/P01339534Oksana)
 
 ## 🤝 Contributing
 
