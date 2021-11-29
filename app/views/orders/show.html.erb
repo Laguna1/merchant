@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 <h1>Your Order Page</h1>
-
+<%= form_for @order do |f| %>
 <table>
   <tr>
     <th>Customer</th>
@@ -45,10 +45,26 @@
   <th>Total Order Sum</th>
   <td><%= print_price @order.total %></td>
   <br />
+
+  <tr>
+    <th>Shipping To:</th>
+      <td>
+      <%= f.select :address_id, current_user.addresses.collect{|a| [a.to_s, a.id]} %>
+     
+      <%= link_to 'Add new address', new_address_path %>
+     </td>
+  </tr>
   
 </table>
 
 <br />
+
+<%= f.submit "Submit Order" %>
+
 <p><%= button_to "Empty Cart", @order, data: { confirm: 'Are you sure?' }, method: :delete %></p>
 <br />
-<%= link_to 'All Orders', orders_path %>
+
+<% end %>
+<%= link_to 'All Orders', orders_path %><br />
+<%= link_to 'Add More Products', products_path %>
+
