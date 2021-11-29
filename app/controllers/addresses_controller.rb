@@ -3,7 +3,8 @@
 class AddressesController < ApplicationController
   before_action :set_address, only: %i[show edit update destroy]
   helper_method :current_user
-  
+  before_action :load_order, only: :create
+
   # GET /addresses or /addresses.json
   def index
     @addresses = Address.all
@@ -15,19 +16,19 @@ class AddressesController < ApplicationController
   # GET /addresses/new
   def new
     @address = Address.new
-    @address.user_id = current_user.id
- end
+  end
 
   # GET /addresses/1/edit
   def edit; end
 
   # POST /addresses or /addresses.json
   def create
-    @address = Address.new(address_params)
+    @address = current_user.addresses.build(address_params)
+    @address.user_id = current_user.id
 
     respond_to do |format|
       if @address.save
-        format.html { redirect_to @address, notice: 'Address was successfully created.' }
+        format.html { redirect_to @order, notice: 'Address was successfully created.' }
         format.json { render :show, status: :created, location: @address }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -60,7 +61,6 @@ class AddressesController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_address
     @address = Address.find(params[:id])
   end
