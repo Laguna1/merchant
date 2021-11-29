@@ -49,8 +49,7 @@
   <tr>
     <th>Shipping To:</th>
       <td>
-      (addresses select box)
-      (add an address link)
+      <%= f.select :address_id, current_user.addresses.collect{|a| [a.to_s, a.id]} %>
      </td>
   </tr>
   
