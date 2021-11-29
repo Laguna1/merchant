@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   resources :addresses
+  resources :orders do 
+    member do 
+      get :confirm
+    end
+  end
+
   match '/auth/:provider/callback', to: 'sessions#create', via: 'get'
   match '/auth/failure', to: redirect('/'), via: 'get'
   match "/login" => redirect("/auth/twitter"), as: :login, via: :get
@@ -8,6 +14,6 @@ Rails.application.routes.draw do
   resources :orders
   resources :order_items
   resources :products
+
   root 'products#index'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
