@@ -2,7 +2,7 @@
 
 class Order < ApplicationRecord
   belongs_to :user, optional: true
-  belongs_to :address
+  belongs_to :address, optional: true
   has_many :order_items, dependent: :destroy
   has_many :products, through: :order_items
 

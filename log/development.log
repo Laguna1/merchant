@@ -35257,3 +35257,322 @@ Migrating to AddAddressIdToOrders (20211128221700)
   [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(2425540704361348245)[0m
   [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2021-11-29 21:05:26 +0200
+  [1m[35m (80.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (202.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:18
+  Rendered products/index.html.erb within layouts/application (Duration: 7559.1ms | Allocations: 35868)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8676.3ms | Allocations: 46322)
+Completed 200 OK in 9073ms (Views: 8342.6ms | ActiveRecord: 499.6ms | Allocations: 50325)
+
+
+  [1m[36mUser Load (61.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAddress Create (356.1ms)[0m  [1m[32mINSERT INTO "addresses" ("line1", "line2", "city", "state", "zip", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["line1", "123 First Street"], ["line2", "Suite B"], ["city", "Washington"], ["state", "DC"], ["zip", "20011"], ["user_id", 1], ["created_at", "2021-11-29 19:08:00.563853"], ["updated_at", "2021-11-29 19:08:00.563853"]]
+  [1m[36mTRANSACTION (246.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAddress Create (0.6ms)[0m  [1m[32mINSERT INTO "addresses" ("line1", "city", "state", "zip", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["line1", "321 Second Street"], ["city", "Arlington"], ["state", "VA"], ["zip", "22182"], ["user_id", 1], ["created_at", "2021-11-29 19:08:21.815841"], ["updated_at", "2021-11-29 19:08:21.815841"]]
+  [1m[36mTRANSACTION (21.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAddress Load (0.4ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/login" for ::1 at 2021-11-29 21:09:48 +0200
+Started GET "/auth/twitter" for ::1 at 2021-11-29 21:09:48 +0200
+Started GET "/login" for ::1 at 2021-11-29 21:09:50 +0200
+Started GET "/auth/twitter" for ::1 at 2021-11-29 21:09:50 +0200
+Started GET "/auth/twitter/callback?oauth_token=[FILTERED]&oauth_verifier=72YK2wdQ115o59mhQv7DL6UPWkgYE8p7" for ::1 at 2021-11-29 21:09:55 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"[FILTERED]", "oauth_verifier"=>"72YK2wdQ115o59mhQv7DL6UPWkgYE8p7", "provider"=>"twitter"}
+  [1m[36mOrder Load (133.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" IS NULL AND "orders"."status" = $1 AND "orders"."user_id" IS NULL LIMIT $2[0m  [["status", "unsubmmited"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `load_order'
+Completed 422 Unprocessable Entity in 357ms (ActiveRecord: 139.9ms | Allocations: 9712)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Address must exist):
+  
+app/controllers/application_controller.rb:14:in `load_order'
+Started GET "/" for ::1 at 2021-11-29 21:10:22 +0200
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:18
+  Rendered products/index.html.erb within layouts/application (Duration: 20.9ms | Allocations: 5123)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 241.6ms | Allocations: 8400)
+Completed 200 OK in 243ms (Views: 240.7ms | ActiveRecord: 1.9ms | Allocations: 8678)
+
+
+Started GET "/" for ::1 at 2021-11-29 21:10:26 +0200
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:18
+  Rendered products/index.html.erb within layouts/application (Duration: 20.1ms | Allocations: 5111)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 28.1ms | Allocations: 8377)
+Completed 200 OK in 29ms (Views: 27.1ms | ActiveRecord: 1.6ms | Allocations: 8664)
+
+
+Started GET "/login" for ::1 at 2021-11-29 21:10:28 +0200
+Started GET "/auth/twitter" for ::1 at 2021-11-29 21:10:28 +0200
+Started GET "/login" for ::1 at 2021-11-29 21:10:29 +0200
+Started GET "/auth/twitter" for ::1 at 2021-11-29 21:10:29 +0200
+Started GET "/auth/twitter/callback?oauth_token=[FILTERED]&oauth_verifier=wu8zVgFRki6jDd63S7ohS9XsjmEUD0C1" for ::1 at 2021-11-29 21:10:30 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"[FILTERED]", "oauth_verifier"=>"wu8zVgFRki6jDd63S7ohS9XsjmEUD0C1", "provider"=>"twitter"}
+  [1m[36mOrder Load (1.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" IS NULL AND "orders"."status" = $1 AND "orders"."user_id" IS NULL LIMIT $2[0m  [["status", "unsubmmited"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `load_order'
+Completed 422 Unprocessable Entity in 9ms (ActiveRecord: 1.5ms | Allocations: 1972)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Address must exist):
+  
+app/controllers/application_controller.rb:14:in `load_order'
+Started GET "/auth/twitter/callback?oauth_token=[FILTERED]&oauth_verifier=wu8zVgFRki6jDd63S7ohS9XsjmEUD0C1" for ::1 at 2021-11-29 21:12:15 +0200
+  
+OAuth::Unauthorized (401 Unauthorized):
+  
+oauth (0.5.8) lib/oauth/consumer.rb:259:in `token_request'
+oauth (0.5.8) lib/oauth/tokens/request_token.rb:27:in `get_access_token'
+omniauth-oauth (1.2.0) lib/omniauth/strategies/oauth.rb:56:in `callback_phase'
+omniauth (2.0.4) lib/omniauth/strategy.rb:272:in `callback_call'
+omniauth (2.0.4) lib/omniauth/strategy.rb:194:in `call!'
+omniauth (2.0.4) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.0.4) lib/omniauth/builder.rb:45:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4.1) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.3) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.4.1) lib/rails/engine.rb:539:in `call'
+puma (5.5.2) lib/puma/configuration.rb:249:in `call'
+puma (5.5.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.5.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.5.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.5.2) lib/puma/server.rb:447:in `process_client'
+puma (5.5.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for ::1 at 2021-11-29 21:12:27 +0200
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:18
+  Rendered products/index.html.erb within layouts/application (Duration: 41.1ms | Allocations: 9068)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 56.5ms | Allocations: 12348)
+Completed 200 OK in 72ms (Views: 46.1ms | ActiveRecord: 11.3ms | Allocations: 13611)
+
+
+Started GET "/login" for ::1 at 2021-11-29 21:12:34 +0200
+Started GET "/auth/twitter" for ::1 at 2021-11-29 21:12:34 +0200
+Started GET "/login" for ::1 at 2021-11-29 21:12:34 +0200
+Started GET "/auth/twitter" for ::1 at 2021-11-29 21:12:34 +0200
+Started GET "/auth/twitter/callback?oauth_token=[FILTERED]&oauth_verifier=zx4MgXjs0WeqcYwWJiIwyk48efYCtq0N" for ::1 at 2021-11-29 21:12:36 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"[FILTERED]", "oauth_verifier"=>"zx4MgXjs0WeqcYwWJiIwyk48efYCtq0N", "provider"=>"twitter"}
+  [1m[36mOrder Load (2.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" IS NULL AND "orders"."status" = $1 AND "orders"."user_id" IS NULL LIMIT $2[0m  [["status", "unsubmmited"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `load_order'
+Completed 422 Unprocessable Entity in 37ms (ActiveRecord: 9.2ms | Allocations: 7789)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Address must exist):
+  
+app/controllers/application_controller.rb:16:in `load_order'
+Started GET "/" for ::1 at 2021-11-29 21:14:07 +0200
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:18
+  Rendered products/index.html.erb within layouts/application (Duration: 34.9ms | Allocations: 9067)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 41.5ms | Allocations: 12326)
+Completed 200 OK in 51ms (Views: 34.7ms | ActiveRecord: 9.1ms | Allocations: 13588)
+
+
+Started GET "/" for ::1 at 2021-11-29 21:14:10 +0200
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (2.0ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:18
+  Rendered products/index.html.erb within layouts/application (Duration: 28.1ms | Allocations: 5102)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 36.9ms | Allocations: 8367)
+Completed 200 OK in 39ms (Views: 36.0ms | ActiveRecord: 2.0ms | Allocations: 8643)
+
+
+Started GET "/login" for ::1 at 2021-11-29 21:14:12 +0200
+Started GET "/auth/twitter" for ::1 at 2021-11-29 21:14:12 +0200
+Started GET "/login" for ::1 at 2021-11-29 21:14:12 +0200
+Started GET "/auth/twitter" for ::1 at 2021-11-29 21:14:12 +0200
+Started GET "/auth/twitter/callback?oauth_token=[FILTERED]&oauth_verifier=NtoblKwo5AzSVm0zgknmoQuBDf6fLgCe" for ::1 at 2021-11-29 21:14:14 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"[FILTERED]", "oauth_verifier"=>"NtoblKwo5AzSVm0zgknmoQuBDf6fLgCe", "provider"=>"twitter"}
+  [1m[36mOrder Load (1.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" IS NULL AND "orders"."status" = $1 AND "orders"."user_id" IS NULL LIMIT $2[0m  [["status", "unsubmmited"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `load_order'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/application_controller.rb:16:in `load_order'
+  [1m[36mOrder Create (37.3ms)[0m  [1m[32mINSERT INTO "orders" ("status", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["status", "unsubmmited"], ["created_at", "2021-11-29 19:14:15.112353"], ["updated_at", "2021-11-29 19:14:15.112353"]]
+  ↳ app/controllers/application_controller.rb:16:in `load_order'
+  [1m[36mTRANSACTION (10.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/application_controller.rb:16:in `load_order'
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 AND "users"."name" IS NULL LIMIT $3[0m  [["provider", "twitter"], ["uid", "1464633061707030528"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:8:in `find_or_create_by_auth'
+  [1m[36mOrder Load (1.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 AND "orders"."status" = $2 AND "orders"."user_id" IS NULL LIMIT $3[0m  [["id", 7], ["status", "unsubmmited"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `load_order'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sessions_controller.rb:10:in `create'
+  [1m[36mOrder Update (20.1ms)[0m  [1m[33mUPDATE "orders" SET "user_id" = $1, "updated_at" = $2 WHERE "orders"."id" = $3[0m  [["user_id", 1], ["updated_at", "2021-11-29 19:14:15.201101"], ["id", 7]]
+  ↳ app/controllers/sessions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (17.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sessions_controller.rb:10:in `create'
+Redirected to http://localhost:3000/products
+Completed 302 Found in 164ms (ActiveRecord: 102.8ms | Allocations: 16055)
+
+
+Started GET "/products" for ::1 at 2021-11-29 21:14:15 +0200
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:18
+  Rendered products/index.html.erb within layouts/application (Duration: 20.5ms | Allocations: 5117)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 36.3ms | Allocations: 9145)
+Completed 200 OK in 38ms (Views: 33.4ms | ActiveRecord: 4.2ms | Allocations: 9422)
+
+
+Started POST "/order_items?product_id=2" for ::1 at 2021-11-29 21:15:51 +0200
+Processing by OrderItemsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product_id"=>"2"}
+  [1m[36mOrder Load (1.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 AND "orders"."status" = $2 AND "orders"."user_id" = $3 LIMIT $4[0m  [["id", 7], ["status", "unsubmmited"], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `load_order'
+  [1m[36mOrderItem Load (38.2ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."order_id" = $1 AND "order_items"."product_id" = $2 LIMIT $3[0m  [["order_id", 7], ["product_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/order_items_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/order_items_controller.rb:19:in `block in create'
+  [1m[36mProduct Load (21.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/order_items_controller.rb:19:in `block in create'
+  [1m[36mOrderItem Create (19.2ms)[0m  [1m[32mINSERT INTO "order_items" ("product_id", "order_id", "quantity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["product_id", 2], ["order_id", 7], ["quantity", 1], ["created_at", "2021-11-29 19:15:52.560939"], ["updated_at", "2021-11-29 19:15:52.560939"]]
+  ↳ app/controllers/order_items_controller.rb:19:in `block in create'
+  [1m[36mTRANSACTION (32.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/order_items_controller.rb:19:in `block in create'
+Redirected to http://localhost:3000/orders/7
+Completed 302 Found in 809ms (ActiveRecord: 120.9ms | Allocations: 11615)
+
+
+Started GET "/orders/7" for ::1 at 2021-11-29 21:15:52 +0200
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mOrder Load (1.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:63:in `set_order'
+  Rendering layout layouts/application.html.erb
+  Rendering orders/show.html.erb within layouts/application
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/show.html.erb:7
+  [1m[35m (62.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "order_items" WHERE "order_items"."order_id" = $1[0m  [["order_id", 7]]
+  ↳ app/views/orders/show.html.erb:15
+  [1m[36mOrderItem Load (1.3ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."order_id" = $1[0m  [["order_id", 7]]
+  ↳ app/views/orders/show.html.erb:28
+  [1m[36mProduct Load (1.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/show.html.erb:30
+  Rendered orders/show.html.erb within layouts/application (Duration: 81.0ms | Allocations: 5152)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 99.8ms | Allocations: 9179)
+Completed 200 OK in 184ms (Views: 109.6ms | ActiveRecord: 68.6ms | Allocations: 11029)
+
+
+Started GET "/orders/7" for ::1 at 2021-11-29 21:17:18 +0200
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mOrder Load (1.8ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:63:in `set_order'
+  Rendering layout layouts/application.html.erb
+  Rendering orders/show.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/show.html.erb:7
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "order_items" WHERE "order_items"."order_id" = $1[0m  [["order_id", 7]]
+  ↳ app/views/orders/show.html.erb:15
+  [1m[36mOrderItem Load (2.5ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."order_id" = $1[0m  [["order_id", 7]]
+  ↳ app/views/orders/show.html.erb:28
+  [1m[36mProduct Load (2.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/show.html.erb:30
+  Rendered orders/show.html.erb within layouts/application (Duration: 24.8ms | Allocations: 4937)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 34.7ms | Allocations: 8949)
+Completed 200 OK in 46ms (Views: 28.6ms | ActiveRecord: 10.1ms | Allocations: 10635)
+
+
+Started GET "/orders/7" for ::1 at 2021-11-29 21:17:19 +0200
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mOrder Load (1.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:63:in `set_order'
+  Rendering layout layouts/application.html.erb
+  Rendering orders/show.html.erb within layouts/application
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/show.html.erb:7
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "order_items" WHERE "order_items"."order_id" = $1[0m  [["order_id", 7]]
+  ↳ app/views/orders/show.html.erb:15
+  [1m[36mOrderItem Load (10.8ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."order_id" = $1[0m  [["order_id", 7]]
+  ↳ app/views/orders/show.html.erb:28
+  [1m[36mProduct Load (1.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/show.html.erb:30
+  Rendered orders/show.html.erb within layouts/application (Duration: 36.0ms | Allocations: 4521)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 43.7ms | Allocations: 8198)
+Completed 200 OK in 50ms (Views: 27.4ms | ActiveRecord: 18.5ms | Allocations: 9171)
+
+

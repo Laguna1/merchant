@@ -9,6 +9,8 @@ This is a small project for a small online store.
 - the function of check of the remains of a product are developed.
 - Implemented the twitter-omniauth
 
+rails generate migration add_[name]_to_[table] [column_name]:[column_type]
+
 ![Twitter](app/assets/images/twitter-omniauth.png)
 ![Products List](app/assets/images/products-list.png)
 
