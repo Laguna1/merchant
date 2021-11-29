@@ -2,7 +2,8 @@
 
 class AddressesController < ApplicationController
   before_action :set_address, only: %i[show edit update destroy]
-
+  helper_method :current_user
+  
   # GET /addresses or /addresses.json
   def index
     @addresses = Address.all
@@ -14,7 +15,8 @@ class AddressesController < ApplicationController
   # GET /addresses/new
   def new
     @address = Address.new
-  end
+    @address.user_id = current_user.id
+ end
 
   # GET /addresses/1/edit
   def edit; end
@@ -65,6 +67,6 @@ class AddressesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def address_params
-    params.require(:address).permit(:line1, :line2, :city, :state, :zip, :user_id)
+    params.require(:address).permit(:line1, :line2, :city, :state, :zip, :user_id, :order_id)
   end
 end
